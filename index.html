@@ -146,6 +146,27 @@
 
   gtag('config', 'AW-17454017908');
 </script>
+
+<!-- Event snippet for 페이지 조회 conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+function gtag_report_conversion(url) {
+  var callback = function () {
+    if (typeof(url) != 'undefined') {
+      window.location = url;
+    }
+  };
+  gtag('event', 'conversion', {
+      'send_to': 'AW-17454017908/1LPACPeLyIIbEPTa3IJB',
+      'value': 1.0,
+      'currency': 'KRW',
+      'event_callback': callback
+  });
+  return false;
+}
+</script>
+
+
     
 </head>
 <body>
@@ -158,7 +179,7 @@
                 Unmatched liquidity, uncompromising security, and competitive fees. Discover all the reasons why Binance has become the global standard, not just an exchange.
             </p>
             <div class="mt-8">
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary">Start for free</a>
+                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Start for free</a>
             </div>
         </header>
         
@@ -196,32 +217,32 @@
                 Binance is more than just an exchange; it's a vast cryptocurrency ecosystem where various financial products and technologies are interconnected.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center">
+                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
                     <h3 class="text-2xl font-bold mb-2">Spot / Futures Trading</h3>
                     <p class="text-gray-400">Superior liquidity and optimal trading environment</p>
                     <p class="mt-4 inline-block btn-primary text-sm">Learn more</p>
                 </a>
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center">
+                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
                     <h3 class="text-2xl font-bold mb-2">Staking / Savings</h3>
                     <p class="text-gray-400">Generate returns by holding long-term</p>
                     <p class="mt-4 inline-block btn-primary text-sm">Learn more</p>
                 </a>
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center">
+                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
                     <h3 class="text-2xl font-bold mb-2">Launchpad</h3>
                     <p class="text-gray-400">Invest in carefully selected new projects</p>
                     <p class="mt-4 inline-block btn-primary text-sm">Learn more</p>
                 </a>
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center">
+                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
                     <h3 class="text-2xl font-bold mb-2">Binance Academy</h3>
                     <p class="text-gray-400">Gain investment knowledge with free education</p>
                     <p class="mt-4 inline-block btn-primary text-sm">Learn more</p>
                 </a>
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center">
+                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
                     <h3 class="text-2xl font-bold mb-2">NFT Marketplace</h3>
                     <p class="text-gray-400">Trade global NFT artworks</p>
                     <p class="mt-4 inline-block btn-primary text-sm">Learn more</p>
                 </a>
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center">
+                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
                     <h3 class="text-2xl font-bold mb-2">BNB Chain</h3>
                     <p class="text-gray-400">Participate in the Web3 DApp ecosystem</p>
                     <p class="mt-4 inline-block btn-primary text-sm">Learn more</p>
@@ -359,7 +380,7 @@
                     <p class="step-number">1</p>
                     <h3 class="font-bold text-xl mb-2">Create Your Account</h3>
                     <p class="text-gray-400">Create a Binance account using your email, phone number, or Google account. **You may receive special benefits by signing up through the link on this page.**</p>
-                    <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary mt-4 inline-block text-sm">Start for free</a>
+                    <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary mt-4 inline-block text-sm" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Start for free</a>
                 </div>
                 <div class="step-card">
                     <p class="step-number">2</p>
@@ -370,7 +391,7 @@
                     <p class="step-number">3</p>
                     <h3 class="font-bold text-xl mb-2">Deposit and Start Trading</h3>
                     <p class="text-gray-400">Deposit cryptocurrency into your account or purchase crypto using various payment methods. You're all set to go!</p>
-                    <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary mt-4 inline-block text-sm">Start trading now</a>
+                    <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary mt-4 inline-block text-sm" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Start trading now</a>
                 </div>
             </div>
         </section>
@@ -429,7 +450,7 @@
                     </div>
                 </div>
                 <div class="mt-8 text-center">
-                    <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary text-lg">Go to trading screen</a>
+                    <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary text-lg" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Go to trading screen</a>
                 </div>
             </div>
         </section>
@@ -441,7 +462,7 @@
                 Now, it's time to start your investment<br> with the <span class="brand-gradient-text">best platform</span>.
             </h2>
             <p class="text-lg text-gray-400 mb-8">Join millions who trust Binance, the world's #1 exchange.</p>
-            <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary text-lg">Start for free</a>
+            <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary text-lg" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Start for free</a>
         </footer>
     </main>
 
@@ -628,4 +649,5 @@
     </script>
 </body>
 </html>
+
 
