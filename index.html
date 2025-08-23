@@ -62,47 +62,6 @@
             background: #1E2329;
             border-left: 4px solid #F0B90B;
         }
-        .flow-item {
-            border: 1px solid #2b3139;
-            background-color: #1E2329;
-            transition: all 0.3s ease;
-        }
-        .flow-item:hover {
-            transform: translateY(-5px);
-            border-color: #F0B90B;
-        }
-        .flow-connector {
-            width: 2px;
-            height: 30px;
-            background-color: #2b3139;
-            margin: 0 auto;
-        }
-        .flow-connector-h {
-            height: 2px;
-            flex-grow: 1;
-            background-color: #2b3139;
-        }
-        .cta-card {
-            background-color: #2b3139;
-            border: 1px solid #333;
-            transition: all 0.3s ease;
-        }
-        .cta-card:hover {
-            border-color: #F0B90B;
-            transform: scale(1.02);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-        }
-        /* Animation Classes */
-        @keyframes fade-in-up {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
         .animated-section {
             opacity: 0;
             transform: translateY(20px);
@@ -112,14 +71,12 @@
             opacity: 1;
             transform: translateY(0);
         }
-        
         .section-separator {
             width: 100px;
             height: 3px;
             background-color: #F0B90B;
             margin: 4rem auto;
         }
-
         .step-card {
             background-color: #1E2329;
             border-radius: 8px;
@@ -134,21 +91,46 @@
             color: #F0B90B;
             margin-bottom: 1rem;
         }
+        .faq-item {
+            background-color: #1E2329;
+            border: 1px solid #2b3139;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            width: 100%;
+            text-align: left;
+            padding: 1.5rem;
+            font-size: 1.125rem;
+            font-weight: 700;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+            padding: 0 1.5rem;
+        }
+        .faq-answer p {
+            padding-bottom: 1.5rem;
+            color: #adb5bd;
+        }
     </style>
 
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17454017908">
-</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17454017908"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'AW-17454017908');
 </script>
 
-<!-- Event snippet for 페이지 조회 conversion page
-In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<!-- Event snippet for 페이지 조회 conversion page -->
 <script>
 function gtag_report_conversion(url) {
   var callback = function () {
@@ -165,9 +147,6 @@ function gtag_report_conversion(url) {
   return false;
 }
 </script>
-
-
-    
 </head>
 <body>
     <main class="container mx-auto p-4 md:p-8">
@@ -179,78 +158,67 @@ function gtag_report_conversion(url) {
                 Unmatched liquidity, uncompromising security, and competitive fees. Discover all the reasons why Binance has become the global standard, not just an exchange.
             </p>
             <div class="mt-8">
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Start for free</a>
+                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Start for free with max fee discount</a>
             </div>
         </header>
-        
+
         <!-- ====================================================== -->
-        <!-- =====   NEW SECTION FOR SITELINKS START   ===== -->
+        <!-- =====   NEW CONTENT SECTION 1: About Us & Trust   ===== -->
         <!-- ====================================================== -->
-        <section class="my-16 md:my-24 animated-section">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <!-- Core Benefit Card -->
-                <div id="fee-benefit" class="card rounded-lg p-8">
-                    <div class="flex items-start">
-                        <span class="text-4xl mr-4">🎁</span>
-                        <div>
-                            <h2 class="text-2xl font-bold mb-2 brand-yellow">Lifetime Fee Discount</h2>
-                            <p class="text-gray-400">
-                                By signing up through our official partner link, you'll automatically receive a lifetime maximum discount on spot and futures trading fees. This is the highest level of reward benefits currently offered by Binance.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Trust Card -->
-                <div id="why-bitmania" class="card rounded-lg p-8">
-                    <div class="flex items-start">
-                        <span class="text-4xl mr-4">🛡️</span>
-                        <div>
-                            <h2 class="text-2xl font-bold mb-2 brand-yellow">Secure Official Partner</h2>
-                            <p class="text-gray-400">
-                                Bitmania is an official influencer and partner of Binance. We guarantee that you can sign up and receive all benefits through the safest and most verified link, free from the risks of phishing or impersonation.
-                            </p>
-                        </div>
-                    </div>
-                </div>
+        <section id="about-us" class="my-16 md:my-24 animated-section">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Your Trusted Guide in the Crypto World</h2>
+            <div class="card rounded-lg p-8 max-w-4xl mx-auto text-center">
+                <h3 class="text-2xl font-bold mb-4 brand-yellow">About Bitmania.net</h3>
+                <p class="text-gray-400 leading-relaxed">
+                    Bitmania.net is an official partner of Binance, dedicated to providing accurate, data-driven insights for cryptocurrency investors. Our mission is to help new users navigate the complexities of the crypto market safely and efficiently. We believe in transparency and provide only verified, official links to ensure your assets are always secure. By using our platform, you are not only getting the best fee discounts but also peace of mind.
+                </p>
             </div>
         </section>
-        <!-- ====================================================== -->
-        <!-- =====        NEW SECTION FOR SITELINKS END         ===== -->
-        <!-- ====================================================== -->
 
         <div class="section-separator"></div>
 
+        <!-- ORIGINAL SECTION: Market Dominance -->
         <section id="leadership" class="my-16 md:my-24 animated-section">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Market Dominance: <span class="brand-yellow">Unrivaled Leadership</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
                 <div class="card rounded-lg p-6 text-center">
                     <h3 class="text-2xl font-bold mb-4">Futures Trading Volume Market Share</h3>
-                    <div class="chart-container h-64 md:h-80">
-                        <canvas id="marketShareChart"></canvas>
-                    </div>
-                    <p class="mt-4 text-gray-400">
-                        Binance leads the market by accounting for over <span class="text-4xl font-black brand-yellow" data-count="50.5">0</span>% of the total monthly trading volume among all centralized futures exchanges worldwide.
-                    </p>
+                    <div class="chart-container h-64 md:h-80"><canvas id="marketShareChart"></canvas></div>
+                    <p class="mt-4 text-gray-400">Binance leads the market by accounting for over <span class="text-4xl font-black brand-yellow" data-count="50.5">0</span>% of the total monthly trading volume among all centralized futures exchanges worldwide.</p>
                 </div>
                 <div class="card rounded-lg p-6">
                     <h3 class="text-2xl font-bold mb-4 text-center">Futures Trading Volume Comparison</h3>
-                    <div class="chart-container h-64 md:h-80">
-                        <canvas id="volumeComparisonChart"></canvas>
-                    </div>
-                    <p class="mt-4 text-gray-400 text-center">
-                        This overwhelming trading volume means 'deep liquidity,' providing a more stable and efficient trading environment for investors.
-                    </p>
+                    <div class="chart-container h-64 md:h-80"><canvas id="volumeComparisonChart"></canvas></div>
+                    <p class="mt-4 text-gray-400 text-center">This overwhelming trading volume means 'deep liquidity,' providing a more stable and efficient trading environment for investors.</p>
                 </div>
             </div>
         </section>
         
         <div class="section-separator"></div>
 
+        <!-- ====================================================== -->
+        <!-- =====   NEW CONTENT SECTION 2: Beginner's Guide   ===== -->
+        <!-- ====================================================== -->
+        <section id="beginners-guide" class="my-16 md:my-24 animated-section">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">A Simple Guide for <span class="brand-yellow">New Investors</span></h2>
+            <div class="card rounded-lg p-8 max-w-4xl mx-auto">
+                <h3 class="text-2xl font-bold mb-4">What is Cryptocurrency?</h3>
+                <p class="text-gray-400 mb-6">Cryptocurrency is a digital currency that operates on a technology called blockchain. Unlike traditional money issued by governments, it is decentralized, meaning no single entity like a bank or government controls it. This allows for secure, transparent, and peer-to-peer transactions across the globe.</p>
+                <h3 class="text-2xl font-bold mb-4 mt-8">Why Choose Binance for Your First Trade?</h3>
+                <ul class="list-disc list-inside text-gray-400 space-y-2">
+                    <li><span class="font-bold text-white">Top-Tier Security:</span> With features like 2FA and the SAFU fund, your assets are protected by industry-leading security measures.</li>
+                    <li><span class="font-bold text-white">Unmatched Liquidity:</span> High trading volume ensures you can buy and sell assets quickly at stable prices.</li>
+                    <li><span class="font-bold text-white">Lowest Fees:</span> Binance offers some of the most competitive trading fees, and our partner link gives you the maximum possible discount.</li>
+                </ul>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+        
+        <!-- ORIGINAL SECTION: Ecosystem -->
         <section id="ecosystem-flow" class="my-16 md:my-24 animated-section">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Value Beyond Trading: The <span class="brand-yellow">Binance Ecosystem</span></h2>
-            <p class="text-center text-gray-400 max-w-4xl mx-auto mb-12">
-                Binance is more than just an exchange; it's a vast cryptocurrency ecosystem where various financial products and technologies are interconnected.
-            </p>
+            <p class="text-center text-gray-400 max-w-4xl mx-auto mb-12">Binance is more than just an exchange; it's a vast cryptocurrency ecosystem where various financial products and technologies are interconnected.</p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
                     <h3 class="text-2xl font-bold mb-2">Spot / Futures Trading</h3>
@@ -287,6 +255,7 @@ function gtag_report_conversion(url) {
 
         <div class="section-separator"></div>
 
+        <!-- ORIGINAL SECTION: Security -->
         <section id="security" class="my-16 md:my-24 animated-section">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Industry-Leading <span class="brand-yellow">Asset Protection Systems</span></h2>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -329,6 +298,7 @@ function gtag_report_conversion(url) {
 
         <div class="section-separator"></div>
 
+        <!-- ORIGINAL SECTION: Fees -->
         <section id="fees" class="my-16 md:my-24 animated-section">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Competitive Fees and Diverse Assets</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
@@ -377,7 +347,7 @@ function gtag_report_conversion(url) {
         
         <div class="section-separator"></div>
 
-        <!-- Section: What is Cryptocurrency? -->
+        <!-- ORIGINAL SECTION: What is Cryptocurrency? -->
         <section id="what-is-crypto" class="my-16 md:my-24 animated-section">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">An Easy-to-Understand Guide to <span class="brand-yellow">Crypto and Blockchain</span></h2>
             <div class="card rounded-lg p-8 max-w-4xl mx-auto">
@@ -404,7 +374,7 @@ function gtag_report_conversion(url) {
 
         <div class="section-separator"></div>
 
-        <!-- Section: How to Sign Up -->
+        <!-- ORIGINAL SECTION: How to Sign Up -->
         <section id="sign-up" class="my-16 md:my-24 animated-section">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Start Your Binance Journey in <span class="brand-yellow">Just 3 Minutes</span></h2>
             <p class="text-center text-gray-400 max-w-3xl mx-auto mb-12">
@@ -433,7 +403,7 @@ function gtag_report_conversion(url) {
 
         <div class="section-separator"></div>
 
-        <!-- Section: How to Trade -->
+        <!-- ORIGINAL SECTION: How to Trade -->
         <section id="how-to-trade" class="my-16 md:my-24 animated-section">
             <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Understanding the <span class="brand-yellow">Trading Screen</span> and <span class="brand-yellow">Trading Methods</span></h2>
             <div class="card rounded-lg p-8 max-w-5xl mx-auto mb-12">
@@ -492,16 +462,51 @@ function gtag_report_conversion(url) {
 
         <div class="section-separator"></div>
 
+        <!-- ====================================================== -->
+        <!-- =====      NEW CONTENT SECTION 4: FAQ           ===== -->
+        <!-- ====================================================== -->
+        <section id="faq" class="my-16 md:my-24 animated-section">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked <span class="brand-yellow">Questions</span></h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Is it safe to sign up through this site?</span>
+                        <span class="transform transition-transform duration-300">+</span>
+                    </button>
+                    <div class="faq-answer"><p>Absolutely. We are an official Binance partner, and all links on our site are verified referral links directly from Binance. This ensures you get the promised benefits securely without any risk of phishing.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How is the fee discount applied?</span>
+                        <span class="transform transition-transform duration-300">+</span>
+                    </button>
+                    <div class="faq-answer"><p>The discount is applied automatically and permanently to your account when you create it using the links on our page. You don't need to enter any codes. You can verify the discount in your Binance account dashboard after registration.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What do I need to start trading?</span>
+                        <span class="transform transition-transform duration-300">+</span>
+                    </button>
+                    <div class="faq-answer"><p>After creating your account, you will need to complete a simple identity verification process (KYC) for security. Once verified, you can deposit funds via bank transfer, credit card, or by transferring crypto from another wallet to start trading.</p></div>
+                </div>
+            </div>
+        </section>
+
+        <div class="section-separator"></div>
+
+        <!-- ORIGINAL FOOTER / CTA -->
         <footer id="start" class="text-center my-12 md:my-20 animated-section">
             <h2 class="text-3xl md:text-5xl font-black mb-4">
                 Now, it's time to start your investment<br> with the <span class="brand-gradient-text">best platform</span>.
             </h2>
-            <p class="text-lg text-gray-400 mb-8">Join millions who trust Binance, the world's #1 exchange.</p>
-            <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary text-lg" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Start for free</a>
+            <p class="text-lg text-gray-400 mb-8">Join millions who trust Binance, the world's #1 exchange. Click below to secure your lifetime fee discount.</p>
+            <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary text-lg" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Register & Get Discount</a>
         </footer>
     </main>
 
     <script>
+    // --- SCRIPT EXECUTION WRAPPED IN DOMContentLoaded TO PREVENT ERRORS ---
+    document.addEventListener('DOMContentLoaded', function() {
         const brandYellow = '#F0B90B';
         const brandBlue = '#00D4F5';
         const brandMint = '#00F0B5';
@@ -510,7 +515,6 @@ function gtag_report_conversion(url) {
         function countUp(element, endValue, duration) {
             const startValue = 0;
             let startTime = null;
-
             function animate(timestamp) {
                 if (!startTime) startTime = timestamp;
                 const progress = timestamp - startTime;
@@ -532,13 +536,11 @@ function gtag_report_conversion(url) {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('is-visible');
-                    
                     const countElement = entry.target.querySelector('[data-count]');
                     if (countElement) {
                         const target = parseFloat(countElement.getAttribute('data-count'));
                         countUp(countElement, target, 2000);
                     }
-                    
                     const countTargetElement = entry.target.querySelector('[data-count-target]');
                     if (countTargetElement) {
                         const target = parseFloat(countTargetElement.getAttribute('data-count-target'));
@@ -556,131 +558,53 @@ function gtag_report_conversion(url) {
         const tooltipTitleCallback = (tooltipItems) => {
             const item = tooltipItems[0];
             let label = item.chart.data.labels[item.dataIndex];
-            if (Array.isArray(label)) {
-                return label.join(' ');
-            }
-            return label;
+            return Array.isArray(label) ? label.join(' ') : label;
         };
         
         const commonChartOptions = {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    labels: {
-                        color: textColor,
-                        font: { size: 14 }
-                    }
-                },
-                tooltip: {
-                    callbacks: { title: tooltipTitleCallback }
-                }
-            },
-            scales: {
-                x: {
-                    ticks: { color: textColor },
-                    grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                },
-                y: {
-                    ticks: { color: textColor },
-                    grid: { color: 'rgba(255, 255, 255, 0.1)' }
-                }
-            }
+            plugins: { legend: { labels: { color: textColor, font: { size: 14 }}}, tooltip: { callbacks: { title: tooltipTitleCallback }}},
+            scales: { x: { ticks: { color: textColor }, grid: { color: 'rgba(255, 255, 255, 0.1)' }}, y: { ticks: { color: textColor }, grid: { color: 'rgba(255, 255, 255, 0.1)' }}}
         };
 
         const marketShareCtx = document.getElementById('marketShareChart').getContext('2d');
         new Chart(marketShareCtx, {
             type: 'doughnut',
-            data: {
-                labels: ['Binance', 'Other Exchanges'],
-                datasets: [{
-                    label: 'Futures Trading Volume Share',
-                    data: [50.5, 49.5],
-                    backgroundColor: [brandYellow, '#2b3139'],
-                    borderColor: '#1E2329',
-                    borderWidth: 4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        position: 'bottom',
-                        labels: {
-                            color: textColor,
-                            font: { size: 14 }
-                        }
-                    },
-                    tooltip: {
-                         callbacks: {
-                            title: tooltipTitleCallback
-                        }
-                    }
-                }
-            }
+            data: { labels: ['Binance', 'Other Exchanges'], datasets: [{ label: 'Futures Trading Volume Share', data: [50.5, 49.5], backgroundColor: [brandYellow, '#2b3139'], borderColor: '#1E2329', borderWidth: 4 }] },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: textColor, font: { size: 14 }}}, tooltip: { callbacks: { title: tooltipTitleCallback }}}}
         });
 
         const volumeComparisonCtx = document.getElementById('volumeComparisonChart').getContext('2d');
         new Chart(volumeComparisonCtx, {
             type: 'bar',
-            data: {
-                labels: ['Binance', 'OKX', 'Bybit'],
-                datasets: [{
-                    label: 'Monthly Futures Volume (in Billions USD)',
-                    data: [2550, 1090, 929],
-                    backgroundColor: [brandYellow, brandBlue, brandMint],
-                    borderColor: [brandYellow, brandBlue, brandMint],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                ...commonChartOptions,
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                         callbacks: {
-                            title: tooltipTitleCallback
-                        }
-                    }
-                },
-                scales: {
-                    x: { ticks: { color: textColor }, grid: { display: false } },
-                    y: { ticks: { color: textColor }, grid: { color: 'rgba(255, 255, 255, 0.1)' } }
-                }
-            }
+            data: { labels: ['Binance', 'OKX', 'Bybit'], datasets: [{ label: 'Monthly Futures Volume (in Billions USD)', data: [2550, 1090, 929], backgroundColor: [brandYellow, brandBlue, brandMint], borderColor: [brandYellow, brandBlue, brandMint], borderWidth: 1 }] },
+            options: { ...commonChartOptions, plugins: { legend: { display: false }, tooltip: { callbacks: { title: tooltipTitleCallback }}}, scales: { x: { ticks: { color: textColor }, grid: { display: false } }, y: { ticks: { color: textColor }, grid: { color: 'rgba(255, 255, 255, 0.1)' } }}}
         });
         
         const assetVarietyCtx = document.getElementById('assetVarietyChart').getContext('2d');
         new Chart(assetVarietyCtx, {
             type: 'bar',
-            data: {
-                labels: ['Binance (Global)', 'Coinbase', 'Binance (US)'],
-                datasets: [{
-                    label: 'Number of Supported Cryptocurrencies',
-                    data: [350, 280, 160],
-                    backgroundColor: [brandYellow, brandBlue, brandMint],
-                    borderColor: [brandYellow, brandBlue, brandMint],
-                    borderWidth: 1
-                }]
-            },
-            options: {
-                ...commonChartOptions,
-                indexAxis: 'y',
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                         callbacks: {
-                            title: tooltipTitleCallback
-                        }
-                    }
-                },
-                scales: {
-                    x: { ticks: { color: textColor }, grid: { color: 'rgba(255, 255, 255, 0.1)' } },
-                    y: { ticks: { color: textColor }, grid: { display: false } }
-                }
-            }
+            data: { labels: ['Binance (Global)', 'Coinbase', 'Binance (US)'], datasets: [{ label: 'Number of Supported Cryptocurrencies', data: [350, 280, 160], backgroundColor: [brandYellow, brandBlue, brandMint], borderColor: [brandYellow, brandBlue, brandMint], borderWidth: 1 }] },
+            options: { ...commonChartOptions, indexAxis: 'y', plugins: { legend: { display: false }, tooltip: { callbacks: { title: tooltipTitleCallback }}}, scales: { x: { ticks: { color: textColor }, grid: { color: 'rgba(255, 255, 255, 0.1)' } }, y: { ticks: { color: textColor }, grid: { display: false } }}}
         });
+
+        // --- NEW JAVASCRIPT FOR FAQ TOGGLE ---
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('span:last-child');
+                
+                if (answer.style.maxHeight) {
+                    answer.style.maxHeight = null;
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    answer.style.maxHeight = answer.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(45deg)';
+                } 
+            });
+        });
+    });
     </script>
 </body>
 </html>
