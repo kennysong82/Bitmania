@@ -1,610 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Binance: Your Crypto Journey, The Best Choice Proven by Data</title>
+    <title>Bitmania | Unlock Your Advanced Crypto Trading Potential with Bybit</title>
+    
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- AOS (Animate On Scroll) Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Custom Styles -->
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #121212;
-            color: #F8F9FA;
+            background-color: #0d1117; /* GitHub Dark-like background */
+            color: #c9d1d9;
         }
-        .brand-yellow { color: #F0B90B; }
-        .brand-yellow-bg { background-color: #F0B90B; }
-        .brand-gradient-text {
-            background: linear-gradient(90deg, #F0B90B, #F8D448);
+        .gradient-text {
+            background: linear-gradient(90deg, #f0b90b, #f8d056);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        .card {
-            background-color: #1E2329;
-            border: 1px solid #2b3139;
+        .cta-button {
+            background: linear-gradient(90deg, #f0b90b, #f8d056);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(240, 185, 11, 0.2);
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(240, 185, 11, 0.3);
+        }
+        .feature-card, .stat-card {
+            background-color: #161b22;
+            border: 1px solid #30363d;
             transition: all 0.3s ease;
         }
-        .card:hover {
+        .feature-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+            border-color: #f0b90b;
         }
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 300px;
-            max-height: 400px;
+        .comparison-table th, .comparison-table td {
+            border-color: #30363d;
         }
-        @media (min-width: 768px) {
-            .chart-container {
-                height: 350px;
-            }
-        }
-        .btn-primary {
-            background-color: #F0B90B;
-            color: #121212;
-            font-weight: 700;
-            padding: 12px 24px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-        .btn-primary:hover {
-            background-color: #F8D448;
-            box-shadow: 0 4px 20px rgba(240, 185, 11, 0.3);
-            transform: translateY(-2px);
-        }
-        .stat-card {
-            background: #1E2329;
-            border-left: 4px solid #F0B90B;
-        }
-        .animated-section {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .animated-section.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .section-separator {
-            width: 100px;
-            height: 3px;
-            background-color: #F0B90B;
-            margin: 4rem auto;
-        }
-        .step-card {
-            background-color: #1E2329;
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
-            border: 1px solid #2b3139;
-        }
-        .step-number {
-            font-size: 3rem;
-            font-weight: 900;
-            line-height: 1;
-            color: #F0B90B;
-            margin-bottom: 1rem;
-        }
-        .faq-item {
-            background-color: #1E2329;
-            border: 1px solid #2b3139;
-            border-radius: 8px;
-            margin-bottom: 1rem;
-            overflow: hidden;
-        }
-        .faq-question {
-            width: 100%;
-            text-align: left;
-            padding: 1.5rem;
-            font-size: 1.125rem;
-            font-weight: 700;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-        }
-        .faq-answer {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.3s ease-out;
-            padding: 0 1.5rem;
-        }
-        .faq-answer p {
-            padding-bottom: 1.5rem;
-            color: #adb5bd;
+        .bybit-highlight-strong {
+            background-color: rgba(45, 212, 191, 0.1);
+            color: #5eead4;
+            font-weight: bold;
         }
     </style>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17454017908"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'AW-17454017908');
-</script>
-
-<!-- Event snippet for 페이지 조회 conversion page -->
-<script>
-function gtag_report_conversion(url) {
-  var callback = function () {
-    if (typeof(url) != 'undefined') {
-      window.location = url;
-    }
-  };
-  gtag('event', 'conversion', {
-      'send_to': 'AW-17454017908/1LPACPeLyIIbEPTa3IJB',
-      'value': 1.0,
-      'currency': 'KRW',
-      'event_callback': callback
-  });
-  return false;
-}
-</script>
 </head>
-<body>
-    <main class="container mx-auto p-4 md:p-8">
-        <header class="text-center my-12 md:my-20 animated-section">
-            <h1 class="text-4xl md:text-6xl font-black mb-4">
-                <span class="brand-gradient-text">The #1 choice</span>, proven by data.
-            </h1>
-            <p class="text-lg md:text-xl text-gray-400 max-w-3xl mx-auto">
-                Unmatched liquidity, uncompromising security, and competitive fees. Discover all the reasons why Binance has become the global standard, not just an exchange.
-            </p>
-            <div class="mt-8">
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Start for free with max fee discount</a>
-            </div>
-        </header>
+<body class="antialiased">
 
-        <!-- ====================================================== -->
-        <!-- =====   NEW CONTENT SECTION 1: About Us & Trust   ===== -->
-        <!-- ====================================================== -->
-        <section id="about-us" class="my-16 md:my-24 animated-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Your Trusted Guide in the Crypto World</h2>
-            <div class="card rounded-lg p-8 max-w-4xl mx-auto text-center">
-                <h3 class="text-2xl font-bold mb-4 brand-yellow">About Bitmania.net</h3>
-                <p class="text-gray-400 leading-relaxed">
-                    Bitmania.net is an official partner of Binance, dedicated to providing accurate, data-driven insights for cryptocurrency investors. Our mission is to help new users navigate the complexities of the crypto market safely and efficiently. We believe in transparency and provide only verified, official links to ensure your assets are always secure. By using our platform, you are not only getting the best fee discounts but also peace of mind.
+    <!-- Header -->
+    <header class="sticky top-0 z-50 bg-gray-900 bg-opacity-80 backdrop-blur-lg border-b border-gray-800">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <!-- 로고: 제공해주신 bitmania-horizontal-logo.png 파일로 교체해주세요 -->
+            <img src="https://placehold.co/150x40/0d1117/f0b90b?text=Bitmania" alt="Bitmania Logo" class="h-8 md:h-10">
+            <a href="#cta" class="cta-button text-black font-bold py-2 px-4 md:py-3 md:px-6 rounded-lg text-sm md:text-base">
+                Get Started
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32 text-center bg-grid-gray-700/[0.2]">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight mb-4" data-aos="fade-up">
+                    Unlock Your Trading Potential.
+                    <br>
+                    <span class="gradient-text">Master Crypto with Pro-Level Tools.</span>
+                </h1>
+                <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-400 mb-8" data-aos="fade-up" data-aos-delay="200">
+                    Stop guessing, start strategizing. We provide exclusive guides, tool comparisons, and data-driven insights, all powered by Bybit's cutting-edge trading platform.
                 </p>
-            </div>
-        </section>
-
-        <div class="section-separator"></div>
-
-        <!-- ORIGINAL SECTION: Market Dominance -->
-        <section id="leadership" class="my-16 md:my-24 animated-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Market Dominance: <span class="brand-yellow">Unrivaled Leadership</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                <div class="card rounded-lg p-6 text-center">
-                    <h3 class="text-2xl font-bold mb-4">Futures Trading Volume Market Share</h3>
-                    <div class="chart-container h-64 md:h-80"><canvas id="marketShareChart"></canvas></div>
-                    <p class="mt-4 text-gray-400">Binance leads the market by accounting for over <span class="text-4xl font-black brand-yellow" data-count="50.5">0</span>% of the total monthly trading volume among all centralized futures exchanges worldwide.</p>
-                </div>
-                <div class="card rounded-lg p-6">
-                    <h3 class="text-2xl font-bold mb-4 text-center">Futures Trading Volume Comparison</h3>
-                    <div class="chart-container h-64 md:h-80"><canvas id="volumeComparisonChart"></canvas></div>
-                    <p class="mt-4 text-gray-400 text-center">This overwhelming trading volume means 'deep liquidity,' providing a more stable and efficient trading environment for investors.</p>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <a href="#cta" class="cta-button text-black font-bold py-3 px-8 rounded-lg text-lg">
+                        Claim 20% Fee Discount
+                    </a>
+                    <p class="text-sm text-gray-500 mt-3">Sign up now and receive a 20% fee discount for 90 days!</p>
                 </div>
             </div>
         </section>
-        
-        <div class="section-separator"></div>
 
-        <!-- ====================================================== -->
-        <!-- =====   NEW CONTENT SECTION 2: Beginner's Guide   ===== -->
-        <!-- ====================================================== -->
-        <section id="beginners-guide" class="my-16 md:my-24 animated-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">A Simple Guide for <span class="brand-yellow">New Investors</span></h2>
-            <div class="card rounded-lg p-8 max-w-4xl mx-auto">
-                <h3 class="text-2xl font-bold mb-4">What is Cryptocurrency?</h3>
-                <p class="text-gray-400 mb-6">Cryptocurrency is a digital currency that operates on a technology called blockchain. Unlike traditional money issued by governments, it is decentralized, meaning no single entity like a bank or government controls it. This allows for secure, transparent, and peer-to-peer transactions across the globe.</p>
-                <h3 class="text-2xl font-bold mb-4 mt-8">Why Choose Binance for Your First Trade?</h3>
-                <ul class="list-disc list-inside text-gray-400 space-y-2">
-                    <li><span class="font-bold text-white">Top-Tier Security:</span> With features like 2FA and the SAFU fund, your assets are protected by industry-leading security measures.</li>
-                    <li><span class="font-bold text-white">Unmatched Liquidity:</span> High trading volume ensures you can buy and sell assets quickly at stable prices.</li>
-                    <li><span class="font-bold text-white">Lowest Fees:</span> Binance offers some of the most competitive trading fees, and our partner link gives you the maximum possible discount.</li>
-                </ul>
-            </div>
-        </section>
-
-        <div class="section-separator"></div>
-        
-        <!-- ORIGINAL SECTION: Ecosystem -->
-        <section id="ecosystem-flow" class="my-16 md:my-24 animated-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Value Beyond Trading: The <span class="brand-yellow">Binance Ecosystem</span></h2>
-            <p class="text-center text-gray-400 max-w-4xl mx-auto mb-12">Binance is more than just an exchange; it's a vast cryptocurrency ecosystem where various financial products and technologies are interconnected.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
-                    <h3 class="text-2xl font-bold mb-2">Spot / Futures Trading</h3>
-                    <p class="text-gray-400">Superior liquidity and optimal trading environment</p>
-                    <p class="mt-4 inline-block btn-primary text-sm">Learn more</p>
-                </a>
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
-                    <h3 class="text-2xl font-bold mb-2">Staking / Savings</h3>
-                    <p class="text-gray-400">Generate returns by holding long-term</p>
-                    <p class="mt-4 inline-block btn-primary text-sm">Learn more</p>
-                </a>
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
-                    <h3 class="text-2xl font-bold mb-2">Launchpad</h3>
-                    <p class="text-gray-400">Invest in carefully selected new projects</p>
-                    <p class="mt-4 inline-block btn-primary text-sm">Learn more</p>
-                </a>
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
-                    <h3 class="text-2xl font-bold mb-2">Binance Academy</h3>
-                    <p class="text-gray-400">Gain investment knowledge with free education</p>
-                    <p class="mt-4 inline-block btn-primary text-sm">Learn more</p>
-                </a>
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
-                    <h3 class="text-2xl font-bold mb-2">NFT Marketplace</h3>
-                    <p class="text-gray-400">Trade global NFT artworks</p>
-                    <p class="mt-4 inline-block btn-primary text-sm">Learn more</p>
-                </a>
-                <a href="https://accounts.binance.com/register?ref=BITMANIA" class="card rounded-lg p-6 text-center" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">
-                    <h3 class="text-2xl font-bold mb-2">BNB Chain</h3>
-                    <p class="text-gray-400">Participate in the Web3 DApp ecosystem</p>
-                    <p class="mt-4 inline-block btn-primary text-sm">Learn more</p>
-                </a>
-            </div>
-        </section>
-
-        <div class="section-separator"></div>
-
-        <!-- ORIGINAL SECTION: Security -->
-        <section id="security" class="my-16 md:my-24 animated-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Industry-Leading <span class="brand-yellow">Asset Protection Systems</span></h2>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="md:col-span-1 flex items-center justify-center">
-                    <div class="stat-card p-6 rounded-lg text-center w-full">
-                        <p class="text-gray-400 text-lg">User Asset Protection Fund</p>
-                        <p class="brand-gradient-text text-6xl font-black my-2">$<span data-count-target="1">0</span>B</p>
-                        <p class="font-bold text-2xl">SAFU Fund</p>
-                        <p class="text-gray-400 mt-2">A $1 billion fund established to protect user assets in the event of emergencies such as hacking.</p>
+        <!-- Stats Section -->
+        <section class="py-20 bg-[#161b22]">
+            <div class="container mx-auto px-6">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white" data-aos="fade-up">Proven by Numbers</h2>
+                </div>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                    <div class="stat-card p-6 rounded-xl" data-aos="fade-up">
+                        <h3 class="text-4xl font-bold gradient-text">99.99%</h3>
+                        <p class="text-gray-400 mt-2">System Uptime</p>
                     </div>
-                </div>
-                <div class="md:col-span-2 card rounded-lg p-8">
-                    <h3 class="text-2xl font-bold mb-6">Multi-Layered Security to Protect Your Assets</h3>
-                    <div class="space-y-6">
-                        <div class="flex items-start">
-                            <span class="text-2xl mr-4 brand-yellow">🛡️</span>
-                            <div>
-                                <h4 class="font-bold text-lg">Two-Factor Authentication (2FA)</h4>
-                                <p class="text-gray-400">Protect your account with an extra layer of security using Google Authenticator to prevent unauthorized logins.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                             <span class="text-2xl mr-4 brand-yellow">✉️</span>
-                            <div>
-                                <h4 class="font-bold text-lg">Anti-Phishing Code</h4>
-                                <p class="text-gray-400">Set a unique code that appears on all official emails from Binance to protect your account from phishing scams.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start">
-                             <span class="text-2xl mr-4 brand-yellow">📋</span>
-                            <div>
-                                <h4 class="font-bold text-lg">Withdrawal Address Whitelist</h4>
-                                <p class="text-gray-400">Minimize the risk of loss due to mistyped addresses or hacking by only allowing withdrawals to approved addresses.</p>
-                            </div>
-                        </div>
+                    <div class="stat-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-4xl font-bold gradient-text">$500M+</h3>
+                        <p class="text-gray-400 mt-2">Asset Insurance Fund</p>
+                    </div>
+                    <div class="stat-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-4xl font-bold gradient-text">75M+</h3>
+                        <p class="text-gray-400 mt-2">Registered Users</p>
+                    </div>
+                    <div class="stat-card p-6 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+                        <h3 class="text-4xl font-bold gradient-text">100k</h3>
+                        <p class="text-gray-400 mt-2">Transactions Per Second</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <div class="section-separator"></div>
-
-        <!-- ORIGINAL SECTION: Fees -->
-        <section id="fees" class="my-16 md:my-24 animated-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Competitive Fees and Diverse Assets</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-                 <div class="card rounded-lg p-6">
-                    <h3 class="text-2xl font-bold mb-4 text-center">Unbeatable Coin Variety</h3>
-                    <div class="chart-container h-64 md:h-80">
-                        <canvas id="assetVarietyChart"></canvas>
-                    </div>
-                    <p class="mt-4 text-gray-400 text-center">
-                        Don't miss out on new investment opportunities by trading over <span class="font-bold brand-yellow text-2xl" data-count-target="350">0</span> diverse cryptocurrencies.
-                    </p>
+        <!-- Why Bybit? Section -->
+        <section id="why-bybit" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white" data-aos="fade-up">The Ultimate Toolkit for Serious Traders</h2>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Bybit isn't just another exchange. It's a high-performance engine built for one purpose: to give you an edge.</p>
                 </div>
-                <div class="card rounded-lg p-6">
-                    <h3 class="text-2xl font-bold mb-6 text-center">Key Features and Competitive Comparison</h3>
-                    <div class="overflow-x-auto">
-                        <table class="w-full text-left">
-                            <thead>
-                                <tr class="border-b border-gray-700">
-                                    <th class="p-3">Feature</th>
-                                    <th class="p-3 text-center brand-yellow">Binance</th>
-                                    <th class="p-3 text-center">Coinbase</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr class="border-b border-gray-700">
-                                    <td class="p-3 font-semibold">Spot Fee (Base)</td>
-                                    <td class="p-3 text-center font-bold text-green-400">0.10%</td>
-                                    <td class="p-3 text-center">~1.5%</td>
-                                </tr>
-                                <tr class="border-b border-gray-700">
-                                    <td class="p-3 font-semibold">Number of Coins</td>
-                                    <td class="p-3 text-center font-bold text-green-400">350+</td>
-                                    <td class="p-3 text-center">280+</td>
-                                </tr>
-                                <tr>
-                                    <td class="p-3 font-semibold">Max Leverage</td>
-                                    <td class="p-3 text-center font-bold text-green-400">125x</td>
-                                    <td class="p-3 text-center">10x</td>
-                                </tr>
-                            </tbody>
-                        </table>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="feature-card p-8 rounded-xl" data-aos="fade-up">
+                        <h3 class="text-xl font-bold text-white mb-3">Automate Your Strategy 24/7</h3>
+                        <p class="text-gray-400">Deploy sophisticated Trading Bots (Grid, DCA, Martingale) to capture market opportunities around the clock, even while you sleep. Remove emotion, execute flawlessly.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-bold text-white mb-3">Learn from the Pros, Effortlessly</h3>
+                        <p class="text-gray-400">Leverage the expertise of top-performing traders. With Copy Trading, you can automatically replicate their strategies with full transparency and control.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-bold text-white mb-3">Keep More of Your Profits</h3>
+                        <p class="text-gray-400">Benefit from one of the most competitive fee structures in the industry. With low maker/taker fees, your capital works harder for you, not for the exchange.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl" data-aos="fade-up">
+                        <h3 class="text-xl font-bold text-white mb-3">Lightning-Fast Execution</h3>
+                        <p class="text-gray-400">Never miss a critical trade. Bybit's powerful matching engine handles up to 100,000 transactions per second, ensuring your orders are filled without slippage.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-bold text-white mb-3">Trade with Unshakable Confidence</h3>
+                        <p class="text-gray-400">Your assets are protected by an industry-leading security system, including 100% cold wallet storage and regular Proof of Reserves audits for ultimate peace of mind.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-bold text-white mb-3">Advanced Multi-Asset Margin</h3>
+                        <p class="text-gray-400">Use all supported assets in your account as collateral. The Unified Trading Account enhances capital efficiency and flexibility for complex strategies.</p>
                     </div>
                 </div>
             </div>
         </section>
-        
-        <div class="section-separator"></div>
 
-        <!-- ORIGINAL SECTION: What is Cryptocurrency? -->
-        <section id="what-is-crypto" class="my-16 md:my-24 animated-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">An Easy-to-Understand Guide to <span class="brand-yellow">Crypto and Blockchain</span></h2>
-            <div class="card rounded-lg p-8 max-w-4xl mx-auto">
-                <h3 class="text-2xl font-bold mb-4">What is Cryptocurrency?</h3>
-                <p class="text-gray-400 mb-6">
-                    Cryptocurrency is a digital or virtual currency transacted over the internet without the control of a central authority like a bank. All transaction records are stored in a transparent and secure distributed ledger technology called 'Blockchain.'
+        <!-- NEW Exchange Comparison Section -->
+        <section class="py-20 bg-[#161b22]">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white" data-aos="fade-up">The Technical Edge for Pro Traders</h2>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">It's about having the right tools, reliability, and capital efficiency to win. Here's how Bybit's tech stands out.</p>
+                </div>
+                <div class="overflow-x-auto" data-aos="fade-up">
+                    <table class="w-full text-left comparison-table min-w-[800px]">
+                        <thead class="bg-gray-800 text-gray-300">
+                            <tr>
+                                <th class="p-4 rounded-tl-lg">Technical Advantage</th>
+                                <th class="p-4 text-center">Bybit</th>
+                                <th class="p-4 text-center rounded-tr-lg">Industry Standard</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b">
+                                <td class="p-4 font-semibold">Capital Efficiency Engine</td>
+                                <td class="p-4 text-center bybit-highlight-strong">Unified Trading Account</td>
+                                <td class="p-4 text-center">Standard Margin Accounts</td>
+                            </tr>
+                            <tr class="border-b">
+                                <td class="p-4 font-semibold">Pro Trader API Rate Limit (v5)</td>
+                                <td class="p-4 text-center bybit-highlight-strong">5,000 requests/min</td>
+                                <td class="p-4 text-center">~1,200 requests/min</td>
+                            </tr>
+                             <tr class="border-b">
+                                <td class="p-4 font-semibold">Lowest Possible Maker Fee</td>
+                                <td class="p-4 text-center bybit-highlight-strong">0% (Pro Tiers)</td>
+                                <td class="p-4 text-center">> 0.01%</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-semibold rounded-bl-lg">System Downtime Risk</td>
+                                <td class="p-4 text-center bybit-highlight-strong">Extremely Low (99.99% Uptime)</td>
+                                <td class="p-4 text-center rounded-br-lg">Higher / Not Disclosed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                 <p class="text-xs text-gray-500 mt-4 text-center" data-aos="fade-up">This comparison focuses on features critical for advanced and professional traders.</p>
+            </div>
+        </section>
+
+        <!-- Educational Section -->
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white" data-aos="fade-up">From Knowledge to Action: Exclusive Guides</h2>
+                    <p class="text-gray-400 mt-4 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">We provide actionable insights to help you master Bybit's professional tools. Start with these exclusive guides.</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="feature-card p-8 rounded-xl flex flex-col" data-aos="fade-up">
+                        <h3 class="text-xl font-bold text-white mb-3">Guide: Setting Up Your First Grid Bot</h3>
+                        <p class="text-gray-400 flex-grow">Profit from market volatility with a step-by-step tutorial on configuring a Bybit Grid Trading Bot.</p>
+                        <ul class="text-gray-400 list-disc list-inside mt-4 text-sm space-y-1">
+                            <li>Choosing the right pair</li>
+                            <li>Setting price ranges</li>
+                            <li>Risk management best practices</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-bold text-white mb-3">Analysis: The Art of Copy Trading</h3>
+                        <p class="text-gray-400 flex-grow">Learn how to analyze Master Traders, diversify your copy trading portfolio, and avoid common pitfalls.</p>
+                         <ul class="text-gray-400 list-disc list-inside mt-4 text-sm space-y-1">
+                            <li>Reading performance metrics</li>
+                            <li>Understanding risk scores</li>
+                            <li>Portfolio allocation strategies</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-bold text-white mb-3">Deep Dive: Unified Trading Account</h3>
+                        <p class="text-gray-400 flex-grow">Understand how the UTA can boost your capital efficiency by using all assets as collateral.</p>
+                         <ul class="text-gray-400 list-disc list-inside mt-4 text-sm space-y-1">
+                            <li>Cross-margin vs. Portfolio Margin</li>
+                            <li>Calculating your margin ratio</li>
+                            <li>Hedging strategies with UTA</li>
+                        </ul>
+                    </div>
+                     <div class="feature-card p-8 rounded-xl flex flex-col" data-aos="fade-up">
+                        <h3 class="text-xl font-bold text-white mb-3">Intro: AI-Powered Trading with TradeGPT</h3>
+                        <p class="text-gray-400 flex-grow">Explore how to use Bybit's TradeGPT for market analysis, strategy suggestions, and technical insights.</p>
+                         <ul class="text-gray-400 list-disc list-inside mt-4 text-sm space-y-1">
+                            <li>Generating market summaries</li>
+                            <li>Asking for technical analysis</li>
+                            <li>Developing trading ideas</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                        <h3 class="text-xl font-bold text-white mb-3">Masterclass: Understanding Funding Rates</h3>
+                        <p class="text-gray-400 flex-grow">Go beyond the basics. Learn how funding rates work and how you can use them as a trading strategy.</p>
+                         <ul class="text-gray-400 list-disc list-inside mt-4 text-sm space-y-1">
+                            <li>Positive vs. Negative rates</li>
+                            <li>Funding rate arbitrage</li>
+                            <li>Predicting market sentiment</li>
+                        </ul>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                        <h3 class="text-xl font-bold text-white mb-3">Strategy: Risk Management for Leverage</h3>
+                        <p class="text-gray-400 flex-grow">Leverage is a powerful tool. Learn essential techniques to manage risk and protect your capital.</p>
+                         <ul class="text-gray-400 list-disc list-inside mt-4 text-sm space-y-1">
+                            <li>Position sizing techniques</li>
+                            <li>Setting effective Stop-Loss orders</li>
+                            <li>Understanding liquidation price</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA Section -->
+        <section id="cta" class="py-20 bg-cover bg-center" style="background-image: linear-gradient(rgba(13, 17, 23, 0.9), rgba(13, 17, 23, 0.9)), url('https://placehold.co/1920x1080/0d1117/30363d?text=Trading+Chart');">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-white" data-aos="fade-up">Ready to Apply These Strategies?</h2>
+                <p class="text-lg md:text-xl text-gray-300 my-6 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                    Open your Bybit account through Bitmania today to get access to a world-class trading engine and an exclusive welcome reward.
                 </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                        <h4 class="font-bold text-xl mb-2 brand-yellow">Blockchain: The Ledger that Records Everything</h4>
-                        <p class="text-gray-400">
-                            Blockchain is a technology where transaction records, or 'blocks,' are linked together like a chain. Once recorded, information is nearly impossible to tamper with, making it extremely secure and transparent.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-xl mb-2 brand-yellow">Decentralization: A System Without a Central Authority</h4>
-                        <p class="text-gray-400">
-                            Cryptocurrencies are not controlled by any specific company or government but are run by the consensus of network participants. This allows individuals to have complete control over their own assets.
-                        </p>
-                    </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <!-- 제휴 링크가 여기에 적용되었습니다. -->
+                    <a href="https://partner.bybit.com/b/bitmania" target="_blank" rel="noopener noreferrer" class="cta-button text-black font-bold py-4 px-10 rounded-lg text-xl inline-block">
+                        Sign Up & Get 20% Fee Discount
+                    </a>
+                    <p class="text-sm text-gray-400 mt-3">This 20% fee discount is valid for your first 90 days.</p>
                 </div>
             </div>
         </section>
-
-        <div class="section-separator"></div>
-
-        <!-- ORIGINAL SECTION: How to Sign Up -->
-        <section id="sign-up" class="my-16 md:my-24 animated-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Start Your Binance Journey in <span class="brand-yellow">Just 3 Minutes</span></h2>
-            <p class="text-center text-gray-400 max-w-3xl mx-auto mb-12">
-                With a few simple steps, you can immediately access all the features of the world's largest cryptocurrency exchange.
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="step-card">
-                    <p class="step-number">1</p>
-                    <h3 class="font-bold text-xl mb-2">Create Your Account</h3>
-                    <p class="text-gray-400">Create a Binance account using your email, phone number, or Google account. **You may receive special benefits by signing up through the link on this page.**</p>
-                    <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary mt-4 inline-block text-sm" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Start for free</a>
-                </div>
-                <div class="step-card">
-                    <p class="step-number">2</p>
-                    <h3 class="font-bold text-xl mb-2">Identity Verification (KYC)</h3>
-                    <p class="text-gray-400">This is the process of verifying your identity with an ID. It's essential for asset protection and to unlock more trading features. **Using the Binance App** makes this process even easier.</p>
-                </div>
-                <div class="step-card">
-                    <p class="step-number">3</p>
-                    <h3 class="font-bold text-xl mb-2">Deposit and Start Trading</h3>
-                    <p class="text-gray-400">Deposit cryptocurrency into your account or purchase crypto using various payment methods. You're all set to go!</p>
-                    <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary mt-4 inline-block text-sm" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Start trading now</a>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-separator"></div>
-
-        <!-- ORIGINAL SECTION: How to Trade -->
-        <section id="how-to-trade" class="my-16 md:my-24 animated-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Understanding the <span class="brand-yellow">Trading Screen</span> and <span class="brand-yellow">Trading Methods</span></h2>
-            <div class="card rounded-lg p-8 max-w-5xl mx-auto mb-12">
-                <h3 class="text-2xl font-bold mb-4 text-center">Key Components of the Trading Screen</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                    <div>
-                        <h4 class="font-bold text-xl mb-2 brand-yellow">1. Charts and Indicators</h4>
-                        <p class="text-gray-400">
-                            Shows the real-time price changes of the selected cryptocurrency. You can use various auxiliary indicators to analyze market trends.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-xl mb-2 brand-yellow">2. Order Book</h4>
-                        <p class="text-gray-400">
-                            Displays buy and sell orders by price. This is key information for understanding market supply and demand.
-                        </p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-xl mb-2 brand-yellow">3. Order Panel</h4>
-                        <p class="text-gray-400">
-                            Where you execute your trades. Enter your desired order type (market, limit, etc.), amount, and quantity to place a trade.
-                        </p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="card rounded-lg p-8 max-w-5xl mx-auto">
-                <h3 class="text-2xl font-bold mb-4 text-center">Trading Methods for Beginners (Market Order)</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center mt-6">
-                    <div>
-                        <h4 class="font-bold text-xl mb-2 brand-yellow">1. Select Coin and Enter Amount</h4>
-                        <p class="text-gray-400 mb-4">
-                            Select the cryptocurrency you want to trade (e.g., BTC/USDT) and enter the amount you want to buy (e.g., 100 USDT).
-                        </p>
-                        <h4 class="font-bold text-xl mb-2 brand-yellow">2. Click the 'Buy' Button</h4>
-                        <p class="text-gray-400">
-                            By selecting a **'Market'** order, your trade will be executed immediately at the best available price in the market.
-                        </p>
-                    </div>
-                    <div>
-                         <h4 class="font-bold text-xl mb-2 brand-yellow">3. How to Sell</h4>
-                        <p class="text-gray-400 mb-4">
-                            If you want to sell the coins you've bought, select the 'Sell' tab and choose a market order to sell them immediately.
-                        </p>
-                         <h4 class="font-bold text-xl mb-2 brand-yellow">4. Confirm Trade Execution</h4>
-                        <p class="text-gray-400">
-                            Once the trade is executed, you can see the coins you've purchased in your asset list.
-                        </p>
-                    </div>
-                </div>
-                <div class="mt-8 text-center">
-                    <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary text-lg" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Go to trading screen</a>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-separator"></div>
-
-        <!-- ====================================================== -->
-        <!-- =====      NEW CONTENT SECTION 4: FAQ           ===== -->
-        <!-- ====================================================== -->
-        <section id="faq" class="my-16 md:my-24 animated-section">
-            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Frequently Asked <span class="brand-yellow">Questions</span></h2>
-            <div class="max-w-4xl mx-auto">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Is it safe to sign up through this site?</span>
-                        <span class="transform transition-transform duration-300">+</span>
-                    </button>
-                    <div class="faq-answer"><p>Absolutely. We are an official Binance partner, and all links on our site are verified referral links directly from Binance. This ensures you get the promised benefits securely without any risk of phishing.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>How is the fee discount applied?</span>
-                        <span class="transform transition-transform duration-300">+</span>
-                    </button>
-                    <div class="faq-answer"><p>The discount is applied automatically and permanently to your account when you create it using the links on our page. You don't need to enter any codes. You can verify the discount in your Binance account dashboard after registration.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What do I need to start trading?</span>
-                        <span class="transform transition-transform duration-300">+</span>
-                    </button>
-                    <div class="faq-answer"><p>After creating your account, you will need to complete a simple identity verification process (KYC) for security. Once verified, you can deposit funds via bank transfer, credit card, or by transferring crypto from another wallet to start trading.</p></div>
-                </div>
-            </div>
-        </section>
-
-        <div class="section-separator"></div>
-
-        <!-- ORIGINAL FOOTER / CTA -->
-        <footer id="start" class="text-center my-12 md:my-20 animated-section">
-            <h2 class="text-3xl md:text-5xl font-black mb-4">
-                Now, it's time to start your investment<br> with the <span class="brand-gradient-text">best platform</span>.
-            </h2>
-            <p class="text-lg text-gray-400 mb-8">Join millions who trust Binance, the world's #1 exchange. Click below to secure your lifetime fee discount.</p>
-            <a href="https://accounts.binance.com/register?ref=BITMANIA" class="btn-primary text-lg" onclick="return gtag_report_conversion('https://accounts.binance.com/register?ref=BITMANIA');">Register & Get Discount</a>
-        </footer>
     </main>
 
+    <!-- Footer -->
+    <footer class="bg-black text-gray-500 text-sm">
+        <div class="container mx-auto px-6 py-12">
+            <div class="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                    <!-- 로고 -->
+                    <img src="https://placehold.co/150x40/000000/f0b90b?text=Bitmania" alt="Bitmania Logo" class="h-8 mb-4">
+                    <p class="max-w-md">Bitmania is an independent educational platform dedicated to helping traders succeed. We provide tools, analysis, and guides for the cryptocurrency markets.</p>
+                </div>
+                <div class="md:text-right">
+                    <h4 class="font-bold text-gray-300 mb-2">Important Disclaimer</h4>
+                    <p>
+                        <span class="font-semibold">Risk Warning:</span> Trading cryptocurrencies and derivatives involves significant risk and may not be suitable for all investors. You could lose all of your invested capital. Please conduct your own research and trade responsibly. Past performance is not indicative of future results.
+                    </p>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-800 pt-6 text-center">
+                <p>&copy; <span id="year"></span> Bitmania. All Rights Reserved. Not affiliated with Bybit Fintech Limited.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS (Animate On Scroll) Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-    // --- SCRIPT EXECUTION WRAPPED IN DOMContentLoaded TO PREVENT ERRORS ---
-    document.addEventListener('DOMContentLoaded', function() {
-        const brandYellow = '#F0B90B';
-        const brandBlue = '#00D4F5';
-        const brandMint = '#00F0B5';
-        const textColor = '#F8F9FA';
-
-        function countUp(element, endValue, duration) {
-            const startValue = 0;
-            let startTime = null;
-            function animate(timestamp) {
-                if (!startTime) startTime = timestamp;
-                const progress = timestamp - startTime;
-                const percentage = Math.min(progress / duration, 1);
-                const currentValue = startValue + percentage * (endValue - startValue);
-                if (currentValue === endValue) {
-                    element.textContent = endValue;
-                } else {
-                     element.textContent = (Math.round(currentValue * 10) / 10).toLocaleString();
-                }
-                if (percentage < 1) {
-                    requestAnimationFrame(animate);
-                }
-            }
-            requestAnimationFrame(animate);
-        }
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
-                    const countElement = entry.target.querySelector('[data-count]');
-                    if (countElement) {
-                        const target = parseFloat(countElement.getAttribute('data-count'));
-                        countUp(countElement, target, 2000);
-                    }
-                    const countTargetElement = entry.target.querySelector('[data-count-target]');
-                    if (countTargetElement) {
-                        const target = parseFloat(countTargetElement.getAttribute('data-count-target'));
-                        countUp(countTargetElement, target, 2000);
-                    }
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.2 });
-
-        document.querySelectorAll('.animated-section').forEach(section => {
-            observer.observe(section);
+        AOS.init({
+            duration: 800, // animation duration
+            once: true, // whether animation should happen only once - while scrolling down
         });
-
-        const tooltipTitleCallback = (tooltipItems) => {
-            const item = tooltipItems[0];
-            let label = item.chart.data.labels[item.dataIndex];
-            return Array.isArray(label) ? label.join(' ') : label;
-        };
-        
-        const commonChartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { labels: { color: textColor, font: { size: 14 }}}, tooltip: { callbacks: { title: tooltipTitleCallback }}},
-            scales: { x: { ticks: { color: textColor }, grid: { color: 'rgba(255, 255, 255, 0.1)' }}, y: { ticks: { color: textColor }, grid: { color: 'rgba(255, 255, 255, 0.1)' }}}
-        };
-
-        const marketShareCtx = document.getElementById('marketShareChart').getContext('2d');
-        new Chart(marketShareCtx, {
-            type: 'doughnut',
-            data: { labels: ['Binance', 'Other Exchanges'], datasets: [{ label: 'Futures Trading Volume Share', data: [50.5, 49.5], backgroundColor: [brandYellow, '#2b3139'], borderColor: '#1E2329', borderWidth: 4 }] },
-            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { color: textColor, font: { size: 14 }}}, tooltip: { callbacks: { title: tooltipTitleCallback }}}}
-        });
-
-        const volumeComparisonCtx = document.getElementById('volumeComparisonChart').getContext('2d');
-        new Chart(volumeComparisonCtx, {
-            type: 'bar',
-            data: { labels: ['Binance', 'OKX', 'Bybit'], datasets: [{ label: 'Monthly Futures Volume (in Billions USD)', data: [2550, 1090, 929], backgroundColor: [brandYellow, brandBlue, brandMint], borderColor: [brandYellow, brandBlue, brandMint], borderWidth: 1 }] },
-            options: { ...commonChartOptions, plugins: { legend: { display: false }, tooltip: { callbacks: { title: tooltipTitleCallback }}}, scales: { x: { ticks: { color: textColor }, grid: { display: false } }, y: { ticks: { color: textColor }, grid: { color: 'rgba(255, 255, 255, 0.1)' } }}}
-        });
-        
-        const assetVarietyCtx = document.getElementById('assetVarietyChart').getContext('2d');
-        new Chart(assetVarietyCtx, {
-            type: 'bar',
-            data: { labels: ['Binance (Global)', 'Coinbase', 'Binance (US)'], datasets: [{ label: 'Number of Supported Cryptocurrencies', data: [350, 280, 160], backgroundColor: [brandYellow, brandBlue, brandMint], borderColor: [brandYellow, brandBlue, brandMint], borderWidth: 1 }] },
-            options: { ...commonChartOptions, indexAxis: 'y', plugins: { legend: { display: false }, tooltip: { callbacks: { title: tooltipTitleCallback }}}, scales: { x: { ticks: { color: textColor }, grid: { color: 'rgba(255, 255, 255, 0.1)' } }, y: { ticks: { color: textColor }, grid: { display: false } }}}
-        });
-
-        // --- NEW JAVASCRIPT FOR FAQ TOGGLE ---
-        document.querySelectorAll('.faq-question').forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('span:last-child');
-                
-                if (answer.style.maxHeight) {
-                    answer.style.maxHeight = null;
-                    icon.style.transform = 'rotate(0deg)';
-                } else {
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
-                    icon.style.transform = 'rotate(45deg)';
-                } 
-            });
-        });
-    });
+        document.getElementById('year').textContent = new Date().getFullYear();
     </script>
+
 </body>
 </html>
