@@ -32,11 +32,6 @@
             border-color: #f0b90b;
             box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .gradient-text {
-            background: linear-gradient(90deg, #f0b90b, #f8d056);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
         .card-bg-blur {
             position: absolute;
             bottom: -50px;
@@ -56,9 +51,9 @@
 <body class="antialiased">
 
     <!-- Header -->
-    <header class="bg-gray-900 bg-opacity-80 backdrop-blur-lg border-b border-gray-800">
+    <header class="bg-gray-900 bg-opacity-80 backdrop-blur-lg border-b border-gray-800 sticky top-0 z-50">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="/" title="Back to Homepage">
+            <a href="https://bitmania.net/" title="Back to Homepage">
                 <img src="https://placehold.co/150x40/0d1117/f0b90b?text=Bitmania" alt="Bitmania Logo" class="h-8 md:h-10">
             </a>
         </div>
@@ -78,10 +73,9 @@
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             
             <!-- Bybit 가이드 카드 -->
-            <a href="/bybit/" class="guide-card block p-8 rounded-2xl flex flex-col" data-aos="fade-up">
+            <a href="https://bitmania.net/bybit/" class="guide-card block p-8 rounded-2xl flex flex-col" data-aos="fade-up">
                 <div class="flex-grow">
                     <div class="flex justify-between items-start mb-4">
-                        <!-- 나중에 Bybit 로고 이미지로 교체하세요 -->
                         <img src="https://placehold.co/100x32/161b22/c9d1d9?text=Bybit" alt="Bybit Logo" class="h-8">
                         <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Active</span>
                     </div>
@@ -98,21 +92,20 @@
             </a>
 
             <!-- Binance 가이드 카드 -->
-            <a href="/binance/" class="guide-card block p-8 rounded-2xl flex flex-col" data-aos="fade-up" data-aos-delay="100">
+            <a href="https://bitmania.net/binance/" class="guide-card block p-8 rounded-2xl flex flex-col" data-aos="fade-up" data-aos-delay="100">
                 <div class="flex-grow">
                      <div class="flex justify-between items-start mb-4">
-                        <!-- 나중에 Binance 로고 이미지로 교체하세요 -->
                         <img src="https://placehold.co/100x32/161b22/c9d1d9?text=Binance" alt="Binance Logo" class="h-8">
-                        <span class="bg-gray-600 text-white text-xs font-bold px-3 py-1 rounded-full">Coming Soon</span>
+                        <span class="bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Active</span>
                     </div>
                     <h2 class="text-2xl font-bold text-white mb-3">Binance Ecosystem Review</h2>
                     <p class="text-gray-400 leading-relaxed">
-                        Our upcoming deep-dive into the vast Binance ecosystem, from its spot market to the innovative BNB Chain.
+                        A complete deep-dive into the vast Binance ecosystem, from its spot market to the innovative BNB Chain.
                     </p>
                 </div>
-                <div class="mt-6 text-gray-500 font-semibold flex items-center">
-                    Guide in Preparation
-                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                <div class="mt-6 text-yellow-400 font-semibold flex items-center">
+                    Read the Guide
+                     <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
                 </div>
                 <div class="card-bg-blur"></div>
             </a>
@@ -138,3 +131,4 @@
 
 </body>
 </html>
+
