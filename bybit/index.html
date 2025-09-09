@@ -589,53 +589,68 @@
 
     <!-- AOS (Animate On Scroll) Library -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     <script>
+      // 이 명령은 웹페이지의 모든 HTML 요소가 완전히 준비된 후에
+      // 안쪽의 코드를 실행하라고 브라우저에 알려줍니다.
+      document.addEventListener('DOMContentLoaded', function() {
+        
+        // 1. AOS 애니메이션 초기화
         AOS.init({
-            duration: 800, // animation duration
-            once: true, // whether animation should happen only once - while scrolling down
+            duration: 800,
+            once: true,
         });
+
+        // 2. 연도 자동 업데이트
         document.getElementById('year').textContent = new Date().getFullYear();
 
+        // 3. 탭 기능 함수
+        // (기존 openTab 함수 로직이 여기에 포함됩니다)
         function openTab(event, tabName) {
-            // Hide all tab content
             let tabcontent = document.getElementsByClassName("tab-content");
             for (let i = 0; i < tabcontent.length; i++) {
                 tabcontent[i].style.display = "none";
             }
-
-            // Remove 'active' class from all tab buttons
             let tablinks = document.getElementsByClassName("tab-button");
             for (let i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
-
-            // Show the selected tab content and add 'active' class to the button
             document.getElementById(tabName).style.display = "block";
             event.currentTarget.className += " active";
         }
+
+        // 모든 탭 버튼에 클릭 이벤트 할당
+        const tabButtons = document.querySelectorAll('.tab-button');
+        tabButtons.forEach(function(button) {
+            button.addEventListener('click', function(event) {
+                // 'fees' 또는 'rates' 값을 가져오기 위해 data-tab 속성을 추가해야 합니다.
+                // 일단 기존 onclick 방식과 호환되도록 임시 수정합니다.
+                const tabName = button.textContent.toLowerCase().includes('fees') ? 'fees' : 'rates';
+                openTab(event, tabName);
+            });
+        });
         
-        // Open the first tab by default on page load
-        document.addEventListener('DOMContentLoaded', function() {
+        // 기본으로 첫 번째 탭 열기
+        if (document.getElementById('fees')) {
             document.getElementById('fees').style.display = 'block';
+        }
+
+
+        // ===================================================
+        // 4. 구글 애즈 전환 추적 기능
+        // ===================================================
+        function bybitAffiliateConversion(event) {
+          console.log('Affiliate link clicked. Firing conversion.');
+          gtag('event', 'conversion', {'send_to': 'AW-17509086828/KP1sCOqurJcbEOzs_ZxB'});
+        }
+
+        const affiliateLinks = document.querySelectorAll('a[href*="partner.bybit.com"]');
+
+        affiliateLinks.forEach(function(link) {
+          link.addEventListener('click', bybitAffiliateConversion);
         });
 
-    // ===================================================
-    // 아래 새로운 전환 추적 코드를 여기에 추가하세요
-    // ===================================================
-    function bybitAffiliateConversion() {
-      gtag('event', 'conversion', {'send_to': 'AW-17509086828/4hlQCI-IgI4bEOZs_ZxB'});
-    }
-
-    // 페이지에 있는 모든 Bybit 제휴 링크를 찾습니다.
-    const affiliateLinks = document.querySelectorAll('a[href*="partner.bybit.com"]');
-
-    // 각 링크에 클릭 이벤트 리스너를 추가합니다.
-    affiliateLinks.forEach(function(link) {
-      link.addEventListener('click', bybitAffiliateConversion);
-    });
-    // ===================================================
-    // 여기까지 추가
-    // ===================================================        
+      });
     </script>
 
 </body>
