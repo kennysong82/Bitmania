@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="NordVPN - 피싱, 사기, 악성 소프트웨어로부터 안전한 브라우징. 165곳 이상의 지역에 8,300개 이상의 VPN 서버. 2025년 1등 VPN 서비스.">
-    <meta name="keywords" content="NordVPN, VPN, 보안, 프라이버시, 악성소프트웨어 차단, Threat Protection, 암호화">
-    <meta property="og:title" content="NordVPN - 가장 진보된 VPN 서비스">
-    <meta property="og:description" content="세계에서 가장 빠른 VPN 중 하나. 최대 10대 장치 보호, 30일 환불 보장">
+    <meta name="description" content="NordVPN - 피싱, 사기, 악성 소프트웨어로부터 안전한 브라우징. 2025년 속도와 보안을 위한 최고의 VPN 서비스.">
+    <meta name="keywords" content="NordVPN, VPN, 보안, 프라이버시, 악성소프트웨어 차단, Threat Protection, 암호화, VPN 서비스">
+    <meta property="og:title" content="NordVPN - 2025년 속도와 보안을 위한 최고의 VPN 서비스">
+    <meta property="og:description" content="세계에서 가장 빠른 VPN 중 하나. 165곳 이상의 지역에 8,300개 이상의 VPN 서버.">
     <meta property="og:type" content="website">
-    <title>NordVPN - 안전하고 빠른 VPN 서비스 | 피싱 사기 악성 소프트웨어 차단</title>
+    <meta property="og:image" content="1.png">
+    <title>NordVPN - 2025년 속도와 보안을 위한 최고의 VPN 서비스</title>
 
     <style>
         * {
@@ -20,7 +21,7 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans KR', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: #1a1a1a;
             background-color: #ffffff;
         }
 
@@ -30,16 +31,32 @@
             padding: 0 20px;
         }
 
-        /* CTA 버튼 스타일 */
+        /* 헤더 */
+        header {
+            position: sticky;
+            top: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid #e5e7eb;
+            z-index: 1000;
+            padding: 16px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
         .cta-button {
             display: inline-block;
             background-color: #e63946;
             color: white;
-            padding: 14px 32px;
+            padding: 12px 28px;
             border-radius: 24px;
             text-decoration: none;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 15px;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
@@ -51,67 +68,63 @@
             box-shadow: 0 4px 12px rgba(230, 57, 70, 0.3);
         }
 
-        /* 헤더 */
-        header {
-            position: sticky;
-            top: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid #e0e0e0;
-            z-index: 1000;
-            padding: 16px 0;
-        }
-
-        header .container {
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-
-        /* 섹션 1: Threat Protection */
-        .section-threat {
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        /* 섹션 공통 */
+        section {
             padding: 80px 0;
         }
 
-        .section-threat .container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .section-threat h1 {
-            font-size: 48px;
+        h1, h2 {
             font-weight: 700;
-            margin-bottom: 24px;
-            color: #1a1a1a;
             line-height: 1.2;
+            color: #1a1a1a;
         }
 
-        .threat-content {
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
+        h1 {
+            font-size: 48px;
+            margin-bottom: 40px;
         }
 
-        .threat-card {
+        h2 {
+            font-size: 42px;
+            margin-bottom: 60px;
+        }
+
+        /* 섹션 1: 메인 이미지 */
+        .section-1 {
+            background: #f8f9fa;
+            padding: 0;
+        }
+
+        .section-1 .main-image-link {
+            display: block;
+            cursor: pointer;
+        }
+
+        .section-1 .main-image-link img {
+            width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 0;
+        }
+
+        .main-card {
             background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-            padding: 40px;
-            border-radius: 20px;
+            padding: 48px;
+            border-radius: 24px;
             color: white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
         }
 
         .badge {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: rgba(59, 130, 246, 0.9);
+            background: rgba(59, 130, 246, 0.95);
             padding: 6px 14px;
             border-radius: 20px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 600;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
 
         .badge-pro {
@@ -119,80 +132,53 @@
             color: white;
             padding: 2px 8px;
             border-radius: 4px;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 700;
+            margin-left: 4px;
         }
 
-        .threat-card h2 {
-            font-size: 36px;
+        .main-card h3 {
+            font-size: 38px;
             margin-bottom: 20px;
             font-weight: 700;
+            line-height: 1.2;
         }
 
-        .threat-card p {
+        .main-card p {
             font-size: 16px;
             line-height: 1.7;
-            color: rgba(255, 255, 255, 0.9);
+            color: rgba(255, 255, 255, 0.95);
+            margin-bottom: 20px;
         }
 
-        .threat-link {
+        .main-card a {
             color: white;
             text-decoration: underline;
-            margin-top: 20px;
-            display: inline-block;
+            font-size: 15px;
         }
 
-        .threat-visual {
-            display: grid;
-            grid-template-columns: 1fr;
+        .side-cards {
+            display: flex;
+            flex-direction: column;
             gap: 20px;
         }
 
-        .visual-main {
-            background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-            border-radius: 20px;
-            padding: 60px;
-            text-align: center;
-            position: relative;
-            min-height: 400px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .visual-main img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .ai-badge {
+        .ai-card {
             background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            padding: 30px;
-            border-radius: 16px;
+            padding: 32px;
+            border-radius: 20px;
             color: white;
         }
 
-        .ai-badge-header {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(59, 130, 246, 0.9);
-            padding: 6px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
-            margin-bottom: 12px;
-        }
-
-        .ai-badge h3 {
+        .ai-card h4 {
             font-size: 24px;
             font-weight: 700;
         }
 
         .stats-card {
             background: linear-gradient(135deg, #1e3a5f 0%, #2c5282 100%);
-            padding: 30px;
-            border-radius: 16px;
+            padding: 32px;
+            border-radius: 20px;
             color: white;
         }
 
@@ -214,110 +200,102 @@
         }
 
         /* 섹션 2: 사용 이유 */
-        .section-why {
-            padding: 80px 0;
+        .section-2 {
             background: white;
         }
 
-        .section-why h2 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 60px;
-            text-align: left;
-        }
-
-        .why-grid {
+        .section-2 .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 60px;
             align-items: start;
         }
 
-        .why-features {
+        .feature-list {
             display: flex;
             flex-direction: column;
             gap: 24px;
         }
 
-        .feature-card {
+        .feature-item {
             background: #f8f9fa;
             padding: 32px;
             border-radius: 16px;
             border: 1px solid #e9ecef;
         }
 
-        .feature-icon {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 16px;
-            color: #3b82f6;
-        }
-
-        .feature-card h3 {
+        .feature-item h3 {
             font-size: 24px;
             font-weight: 700;
             margin-bottom: 12px;
-            color: #1a1a1a;
         }
 
-        .feature-card p {
+        .feature-item p {
             font-size: 16px;
             color: #666;
             line-height: 1.7;
+            margin-bottom: 12px;
         }
 
-        .feature-link {
+        .feature-item a {
             color: #3b82f6;
             text-decoration: none;
-            margin-top: 12px;
-            display: inline-block;
             font-weight: 600;
         }
 
-        .why-visual {
-            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+        .visual-box {
+            background: #f1f3f5;
             border-radius: 20px;
-            padding: 40px;
+            padding: 60px 40px;
             text-align: center;
             min-height: 600px;
             display: flex;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
         }
 
-        .why-visual h3 {
-            font-size: 32px;
+        .visual-box h3 {
+            font-size: 40px;
             font-weight: 700;
-            margin-bottom: 16px;
+            margin-bottom: 8px;
         }
 
-        .why-visual p {
+        .visual-box p {
             font-size: 18px;
             color: #3b82f6;
             font-weight: 600;
             margin-bottom: 40px;
         }
 
-        .why-visual img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-        }
-
-        /* 섹션 3: Hero/Main CTA */
-        .section-hero {
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
-            padding: 100px 0;
+        /* 섹션 3: Hero */
+        .section-3 {
+            background-image: url('3.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
             color: white;
             position: relative;
-            overflow: hidden;
         }
 
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+        .section-3::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
+        }
+
+        .section-3 .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-3 .content-grid {
+            display: flex;
+            justify-content: center;
             align-items: center;
         }
 
@@ -330,25 +308,18 @@
             color: #ffd700;
         }
 
-        .hero-badge svg {
-            width: 20px;
-            height: 20px;
-            fill: #ffd700;
-        }
-
-        .hero-text h2 {
+        .section-3 h2 {
             font-size: 52px;
-            font-weight: 700;
+            color: white;
             margin-bottom: 32px;
-            line-height: 1.2;
         }
 
-        .hero-checklist {
+        .checklist {
             list-style: none;
             margin-bottom: 40px;
         }
 
-        .hero-checklist li {
+        .checklist li {
             display: flex;
             align-items: flex-start;
             gap: 12px;
@@ -356,21 +327,21 @@
             margin-bottom: 16px;
         }
 
-        .hero-checklist li::before {
+        .checklist li::before {
             content: "✓";
             color: #60d5f8;
             font-weight: 700;
             font-size: 24px;
         }
 
-        .hero-cta {
+        .cta-group {
             display: flex;
             flex-direction: column;
             gap: 16px;
             align-items: flex-start;
         }
 
-        .price-tag {
+        .price-badge {
             background: white;
             color: #3b82f6;
             padding: 12px 24px;
@@ -379,7 +350,6 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            margin-bottom: 16px;
         }
 
         .guarantee {
@@ -390,69 +360,63 @@
             opacity: 0.9;
         }
 
-        .hero-visual {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-visual img {
-            max-width: 100%;
-            height: auto;
-            filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
-        }
-
         /* 섹션 4: VPN 제공업체 이상 */
-        .section-more {
-            padding: 80px 0;
+        .section-4 {
             background: white;
         }
 
-        .section-more h2 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 60px;
-            text-align: center;
-        }
-
-        .more-grid {
+        .feature-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 24px;
         }
 
-        .more-card {
+        .grid-item {
             background: #f8f9fa;
             padding: 32px;
             border-radius: 16px;
             border: 1px solid #e9ecef;
             transition: all 0.3s ease;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
         }
 
-        .more-card:hover {
+        .grid-item:hover {
             transform: translateY(-4px);
             box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
         }
 
-        .more-card-large {
+        .grid-item-large {
             grid-row: span 2;
-            background-size: cover;
-            background-position: center;
+            padding: 0;
+            overflow: hidden;
             display: flex;
-            flex-direction: column;
-            justify-content: flex-end;
-            min-height: 400px;
+            align-items: center;
+            justify-content: center;
         }
 
-        .more-card-large img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 12px;
+        .grid-item h3 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
         }
 
-        .card-badge {
+        .grid-item p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+
+        .grid-item a {
+            color: #3b82f6;
+            text-decoration: none;
+            font-weight: 600;
+            margin-top: 12px;
+            display: inline-block;
+        }
+
+        .item-badge {
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -462,88 +426,58 @@
             margin-bottom: 12px;
         }
 
-        .more-card h3 {
-            font-size: 24px;
-            font-weight: 700;
-            margin-bottom: 12px;
-            color: #1a1a1a;
-        }
-
-        .more-card p {
-            font-size: 15px;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .card-link {
-            color: #3b82f6;
-            text-decoration: none;
-            margin-top: 12px;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            font-weight: 600;
-        }
-
-        .threat-pro-card {
+        .threat-pro-item {
             background: linear-gradient(135deg, #1e3a5f 0%, #6366f1 100%);
             color: white;
+            padding: 32px !important;
         }
 
-        .threat-pro-card h3,
-        .threat-pro-card p {
+        .threat-pro-item h3,
+        .threat-pro-item p {
             color: white;
         }
 
-        .threat-pro-card .card-badge {
+        .threat-pro-item .item-badge {
             color: white;
             background: rgba(255, 255, 255, 0.2);
             padding: 4px 12px;
             border-radius: 12px;
         }
 
-        .checklist-card {
-            padding: 24px;
-        }
-
-        .checklist-card ul {
+        .mini-checklist {
             list-style: none;
             margin-top: 16px;
         }
 
-        .checklist-card li {
+        .mini-checklist li {
             display: flex;
-            align-items: flex-start;
+            align-items: center;
             gap: 12px;
             margin-bottom: 12px;
             font-size: 14px;
         }
 
-        .checklist-card li .icon {
+        .mini-checklist .icon {
             color: #10b981;
             font-weight: 700;
         }
 
-        .checklist-card li .status {
+        .mini-checklist .status {
             color: #10b981;
             font-weight: 600;
             margin-left: auto;
         }
 
         /* 섹션 5: 모든 장치 */
-        .section-devices {
-            padding: 80px 0;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        .section-5 {
+            background: #f8f9fa;
         }
 
-        .section-devices h2 {
-            font-size: 48px;
-            font-weight: 700;
-            margin-bottom: 16px;
+        .section-5 h2 {
             text-align: center;
         }
 
-        .section-devices .subtitle {
+        .section-5 .subtitle {
             font-size: 18px;
             color: #666;
             text-align: center;
@@ -577,33 +511,17 @@
             border-color: #3b82f6;
         }
 
-        .device-content {
+        .section-5 .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 60px;
             align-items: center;
         }
 
-        .device-visual {
-            background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
-            border-radius: 20px;
-            padding: 60px;
-            text-align: center;
-            min-height: 500px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .device-visual img {
-            max-width: 100%;
-            height: auto;
-        }
-
         .device-list h3 {
-            font-size: 32px;
+            font-size: 28px;
             font-weight: 700;
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
 
         .device-list ul {
@@ -611,20 +529,15 @@
         }
 
         .device-list li {
-            padding: 20px 0;
+            padding: 16px 0;
             border-bottom: 1px solid #e9ecef;
-            font-size: 20px;
+            font-size: 16px;
             color: #666;
-            transition: color 0.3s ease;
-        }
-
-        .device-list li:hover {
-            color: #3b82f6;
         }
 
         .device-list li:first-child {
-            color: #3b82f6;
-            font-weight: 600;
+            color: #1a1a1a;
+            font-weight: 500;
         }
 
         /* Footer */
@@ -640,53 +553,69 @@
             opacity: 0.8;
         }
 
-        /* 반응형 디자인 */
+        /* 이미지 스타일 */
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            border-radius: 12px;
+        }
+
+        /* 반응형 */
         @media (max-width: 1024px) {
-            .section-threat .container,
-            .why-grid,
-            .hero-content,
-            .device-content {
+            .content-grid,
+            .section-2 .content-grid,
+            .section-3 .content-grid,
+            .section-5 .content-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
             }
 
-            .more-grid {
+            .feature-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .section-threat h1,
-            .section-why h2,
-            .section-more h2,
-            .section-devices h2,
-            .hero-text h2 {
+            h1 {
                 font-size: 36px;
+            }
+
+            h2 {
+                font-size: 32px;
+            }
+
+            .section-3 h2 {
+                font-size: 38px;
             }
         }
 
         @media (max-width: 768px) {
-            .more-grid {
+            .feature-grid {
                 grid-template-columns: 1fr;
             }
 
-            .more-card-large {
+            .grid-item-large {
                 grid-row: span 1;
-                min-height: 300px;
             }
 
-            .section-threat h1,
-            .section-why h2,
-            .section-more h2,
-            .section-devices h2,
-            .hero-text h2 {
+            h1 {
                 font-size: 28px;
             }
 
-            .device-tabs {
-                font-size: 14px;
+            h2 {
+                font-size: 26px;
+            }
+
+            .section-3 h2 {
+                font-size: 30px;
+            }
+
+            section {
+                padding: 60px 0;
             }
 
             .device-tab {
                 padding: 8px 16px;
+                font-size: 14px;
             }
         }
     </style>
@@ -695,108 +624,57 @@
     <!-- 헤더 -->
     <header>
         <div class="container">
-            <a href="#purchase" class="cta-button">NordVPN 구매하기</a>
+            <a href="https://go.nordvpn.net/SHATX" class="cta-button" target="_blank" rel="noopener">NordVPN 구매하기</a>
         </div>
     </header>
 
-    <!-- 섹션 1: Threat Protection -->
-    <section class="section-threat">
-        <div class="container">
-            <div class="threat-content">
-                <h1>피싱, 사기, 악성 소프트웨어 걱정 없이<br>브라우징</h1>
-
-                <div class="threat-card">
-                    <div class="badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="currentColor"/>
-                        </svg>
-                        Threat Protection <span class="badge-pro">PRO</span>™
-                    </div>
-                    <h2>통합 멀웨어 방지<br>도구</h2>
-                    <p>걱정은 덜고, 평온한 일상에 집중하세요. 바이러스 및 위협 방지 Pro™는 백그라운드에서 소리 없이 자동으로 작동해 방문한 웹사이트와 다운로드한 파일에서 위험을 자동으로 스캔합니다.</p>
-                    <a href="#learn-more" class="threat-link">바이러스 및 위협 방지 Pro™란 무엇인가요? →</a>
-                </div>
-            </div>
-
-            <div class="threat-visual">
-                <div class="visual-main">
-                    <!-- 이미지 1: Threat Protection 방패 일러스트 -->
-                    <img src="1-shield.png" alt="Threat Protection 통합 멀웨어 방지 도구">
-                </div>
-
-                <div class="ai-badge">
-                    <div class="ai-badge-header">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="white"/>
-                        </svg>
-                        Threat Protection <span class="badge-pro">PRO</span>™
-                    </div>
-                    <h3>AI 기반 기술</h3>
-                </div>
-
-                <div class="stats-card">
-                    <div class="stats-label">매달</div>
-                    <div class="stats-number">46억 건</div>
-                    <div class="stats-desc">광고 차단</div>
-                </div>
-            </div>
-        </div>
+    <!-- 섹션 1: 메인 이미지 -->
+    <section class="section-1">
+        <a href="https://go.nordvpn.net/SHATX" class="main-image-link" target="_blank" rel="noopener">
+            <img src="메인.png" alt="NordVPN - 피싱, 사기, 악성 소프트웨어로부터 안전한 브라우징">
+        </a>
     </section>
 
     <!-- 섹션 2: NordVPN을 사용해야 하는 이유 -->
-    <section class="section-why">
+    <section class="section-2">
         <div class="container">
             <h2>NordVPN을 사용해야 하는 이유</h2>
 
-            <div class="why-grid">
-                <div class="why-features">
-                    <div class="feature-card">
-                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                            <path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                        </svg>
+            <div class="content-grid">
+                <div class="feature-list">
+                    <div class="feature-item">
                         <h3>글로벌 액세스</h3>
                         <p>165곳 이상의 지역에 분포된 8,300개 이상의 VPN 서버 - 언제나 가까운 서버에 연결할 수 있어 가장 빠른 연결을 제공합니다.</p>
-                        <a href="#servers" class="feature-link">NordVPN 서버 →</a>
+                        <a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener">NordVPN 서버 →</a>
                     </div>
 
-                    <div class="feature-card">
-                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor" stroke-width="2"/>
-                        </svg>
+                    <div class="feature-item">
                         <h3>개인 정보 보호</h3>
-                        <p>NordVPN은 강시, 사이버 위협 및 위협한 Wi-Fi 네트워크로부터 사용자를 보호합니다.</p>
-                        <a href="#privacy" class="feature-link">추적 방지 →</a>
+                        <p>NordVPN은 감시, 사이버 위협 및 위험한 Wi-Fi 네트워크로부터 사용자를 보호합니다.</p>
+                        <a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener">추적 방지 →</a>
                     </div>
 
-                    <div class="feature-card">
-                        <svg class="feature-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect x="3" y="11" width="18" height="10" rx="2" stroke="currentColor" stroke-width="2"/>
-                            <path d="M7 11V7C7 4.79086 8.79086 3 11 3H13C15.2091 3 17 4.79086 17 7V11" stroke="currentColor" stroke-width="2"/>
-                        </svg>
+                    <div class="feature-item">
                         <h3>보안</h3>
                         <p>NordVPN은 최대 10대의 장치에서 동시에 사용할 수 있으며, Wi-Fi 라우터에 설치하면 집 전체 네트워크를 360° 보호할 수 있습니다.</p>
-                        <a href="#security" class="feature-link">강력한 암호화 보안 →</a>
+                        <a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener">강력한 암호화 보안 →</a>
                     </div>
                 </div>
 
-                <div class="why-visual">
-                    <h3>초고속</h3>
-                    <p>VPN 서버 수</p>
-                    <!-- 이미지 2: NordVPN 앱 스크린샷 -->
-                    <img src="2-app-screenshot.png" alt="NordVPN 앱 - 초고속 VPN 서버">
+                <div class="visual-box">
+                    <img src="2.png" alt="NordVPN 앱 - 초고속 VPN 서버">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- 섹션 3: Hero / Main CTA -->
-    <section class="section-hero" id="purchase">
+    <section class="section-3" id="cta">
         <div class="container">
-            <div class="hero-content">
-                <div class="hero-text">
+            <div class="content-grid">
+                <div>
                     <div class="hero-badge">
-                        <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                             <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
                         </svg>
                         techradar 선정 2025년 1등 VPN
@@ -804,22 +682,22 @@
 
                     <h2>가장 진보된 VPN.<br>그리고 그 이상.</h2>
 
-                    <ul class="hero-checklist">
+                    <ul class="checklist">
                         <li>세계에서 가장 빠른 VPN 중 하나입니다.</li>
                         <li>하나의 계정으로 최대 10대의 장치를 보호할 수 있습니다.</li>
                         <li>피싱, 사기, 멀웨어를 피할 수 있도록 도와줍니다.</li>
                     </ul>
 
-                    <div class="hero-cta">
-                        <div class="price-tag">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/>
+                    <div class="cta-group">
+                        <div class="price-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 10L12 5L17 10M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
                             특별 할인
                         </div>
-                        <a href="#order" class="cta-button" style="font-size: 18px; padding: 16px 40px;">NordVPN 구매하기</a>
+                        <a href="https://go.nordvpn.net/SHATX" class="cta-button" style="font-size: 18px; padding: 16px 40px;" target="_blank" rel="noopener">NordVPN 구매하기</a>
                         <div class="guarantee">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
                                 <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
                                 <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
                             </svg>
@@ -827,109 +705,78 @@
                         </div>
                     </div>
                 </div>
-
-                <div class="hero-visual">
-                    <!-- 이미지 3: 모바일 앱 스크린샷 -->
-                    <img src="3-mobile-app.png" alt="NordVPN 모바일 앱">
-                </div>
             </div>
         </div>
     </section>
 
     <!-- 섹션 4: VPN 제공업체, 그 이상 -->
-    <section class="section-more">
+    <section class="section-4">
         <div class="container">
             <h2>VPN 제공업체, 그 이상</h2>
 
-            <div class="more-grid">
-                <!-- 이미지 카드 -->
-                <div class="more-card more-card-large">
-                    <!-- 이미지 4-1: 여성이 스마트폰 사용 -->
-                    <img src="4-person.png" alt="NordVPN 사용자">
+            <div class="feature-grid">
+                <div class="grid-item threat-pro-item grid-item-large">
+                    <div class="item-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2L2 7V13C2 19 12 22 12 22C12 22 22 19 22 13V7L12 2Z"/>
+                        </svg>
+                        바이러스 및 위협 방지 Pro™
+                    </div>
+                    <h3>악성 소프트웨어로부터<br>보이지 않는 보호</h3>
+                    <p>걱정할 필요는 없습니다. 피싱, 악성코드, 트래커, 공격을 자동으로 차단합니다.</p>
+
+                    <ul class="mini-checklist">
+                        <li>
+                            <span class="icon">✓</span>
+                            <span>광고를 방지</span>
+                            <span class="status">포함</span>
+                        </li>
+                        <li>
+                            <span class="icon">✓</span>
+                            <span>고급 보안을 주요 보호</span>
+                            <span class="status">포함</span>
+                        </li>
+                        <li>
+                            <span class="icon">✓</span>
+                            <span>웹 추적과 넘쳐나는 팝업 차단</span>
+                            <span class="status">포함</span>
+                        </li>
+                    </ul>
                 </div>
 
-                <!-- 가장 빠른 VPN -->
-                <div class="more-card">
-                    <div class="card-badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z" fill="currentColor"/>
+                <div class="grid-item">
+                    <div class="item-badge">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M13 2L3 14H12L11 22L21 10H12L13 2Z"/>
                         </svg>
                         VPN
                     </div>
                     <h3>가장 빠른 VPN 서비스!</h3>
                     <p>2025년 새로운 보안 표준, 탁월한 속도와 포스트 퀀텀 암호화.</p>
-                    <a href="#speed" class="card-link">NordVPN의 빠른 속도 비결은 무엇인가요? →</a>
+                    <a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener">NordVPN의 빠른 속도 비결은 무엇인가요? →</a>
                 </div>
 
-                <!-- 글로벌 네트워크 -->
-                <div class="more-card">
-                    <!-- 이미지 4-2: 글로벌 네트워크 -->
-                    <div style="text-align: center; margin-bottom: 20px;">
-                        <img src="4-globe.png" alt="글로벌 서버 네트워크" style="max-width: 100%; border-radius: 12px;">
-                    </div>
-                    <h3 style="text-align: center; font-size: 36px; margin: 0;">글로벌</h3>
-                    <p style="text-align: center;">서버 네트워크</p>
+                <div class="grid-item">
+                    <img src="4.png" alt="NordVPN 사용자" style="width: 100%; height: auto; object-fit: contain; border-radius: 16px;">
                 </div>
 
-                <!-- 안정적인 연결 -->
-                <div class="more-card">
-                    <div class="card-badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                        너무 빠르니 인터넷이
-                    </div>
-                    <h3>더 안정된 연결과 마음의 평화</h3>
-                    <p>무료한 네이밍에 대한 극적인 알림을 받진 않겠지만 최적화해야 합니다.</p>
+                <div class="grid-item">
+                    <div class="item-badge">다크 웹 모니터링</div>
+                    <h3>더 안전한 계정과 마음의 평화</h3>
+                    <p>유출된 데이터에 대한 즉각적인 알림을 받고 위험을 최소화하세요.</p>
                 </div>
 
-                <!-- 법적 통보 -->
-                <div class="more-card">
-                    <div class="card-badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7V13C2 19 12 22 12 22C12 22 22 19 22 13V7L12 2Z" stroke="currentColor" stroke-width="2"/>
-                        </svg>
-                        비밀번호 관리
-                    </div>
-                    <h3>법거통보 다시 입력할 필요가 없어요</h3>
-                    <p>비밀번호 업데이트 출제거 사용하는 모든 장치서 더 쉽게 로그인하세요.</p>
-                </div>
-
-                <!-- Threat Protection Pro -->
-                <div class="more-card threat-pro-card">
-                    <div class="card-badge">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7V13C2 19 12 22 12 22C12 22 22 19 22 13V7L12 2Z" fill="white"/>
-                        </svg>
-                        바이러스 및 위협 방지 Pro™
-                    </div>
-                    <h3>악성 소프트웨어로부터<br>보이지 않는 보호</h3>
-                    <p>걱정할 필요은 없습니다. 피싱, 악성코드, 트래커, 공감은 시도으로 자동으로 스캔합니다.</p>
-
-                    <ul class="checklist-card" style="margin-top: 20px;">
-                        <li>
-                            <span class="icon">✓</span>
-                            <span>광악히 방지</span>
-                            <span class="status">계획</span>
-                        </li>
-                        <li>
-                            <span class="icon">✓</span>
-                            <span>고급 보악주요 보호</span>
-                            <span class="status">계획</span>
-                        </li>
-                        <li>
-                            <span class="icon">✓</span>
-                            <span>물 추추가 넘 칩 차단</span>
-                            <span class="status">계획</span>
-                        </li>
-                    </ul>
+                <div class="grid-item">
+                    <div class="item-badge">비밀번호 관리</div>
+                    <h3>번거롭게 비밀번호를 다시 입력할 필요가 없어요</h3>
+                    <p>비밀번호 업데이트 없이도 사용하는 모든 장치에서 더 쉽게 로그인하세요.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- 섹션 5: 모든 장치에서 사용 가능 -->
-    <section class="section-devices">
+    <!-- 섹션 5: 모든 장치 -->
+    <section class="section-5">
         <div class="container">
             <h2>모든 장치에서 사용할 수 있는 VPN 서비스</h2>
             <p class="subtitle">최대 10대의 장치에서 동시에 NordVPN을 사용하세요. NordVPN은 모든 주요 플랫폼 및 프록시 브라우저 확장 프로그램을 대상으로 안전한 VPN 연결을 제공합니다.</p>
@@ -942,16 +789,17 @@
                 <button class="device-tab">기타(라우터 설정)</button>
             </div>
 
-            <div class="device-content">
-                <div class="device-visual">
-                    <!-- 이미지 5: 노트북 (Windows) -->
-                    <img src="5-laptop.png" alt="Windows VPN - NordVPN 노트북">
+            <div class="content-grid">
+                <div class="visual-box" style="min-height: 500px;">
+                    <a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener">
+                        <img src="5.png" alt="Windows VPN - NordVPN 노트북" style="cursor: pointer;">
+                    </a>
                 </div>
 
                 <div class="device-list">
-                    <h3>원도우 VPN을 보여주는 이미지</h3>
+                    <h3>모든 장치 사용 가능</h3>
                     <ul>
-                        <li><strong>Windows용 VPN을 다운로드</strong>하고 PC에서 작업, 게임, 스트리밍을 더 안전하게 즐겨보세요. 가장 빠른 VPN 서비스와 함께 무제한 VPN 데이터를 즐기며, 어디서나 안전지안 연결을 경험하세요.</li>
+                        <li><strong><a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener" style="color: #3b82f6; text-decoration: none;">Windows용 VPN을 다운로드</a></strong>하고 PC에서 작업, 게임, 스트리밍을 더 안전하게 즐겨보세요. 가장 빠른 VPN 서비스와 함께 무제한 VPN 데이터를 즐기며, 어디서나 안전지안 연결을 경험하세요.</li>
                         <li>Mac용 VPN</li>
                         <li>Linux용 VPN</li>
                         <li>Android용 VPN</li>
