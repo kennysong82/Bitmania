@@ -89,22 +89,103 @@
             margin-bottom: 60px;
         }
 
-        /* 섹션 1: 메인 이미지 */
+        /* 섹션 1: 메인 히어로 (기존 section-3) */
         .section-1 {
-            background: #f8f9fa;
-            padding: 0;
+            background-image: url('3.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            color: white;
+            position: relative;
+            padding: 80px 0;
         }
 
-        .section-1 .main-image-link {
-            display: block;
-            cursor: pointer;
+        .section-1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 0;
         }
 
-        .section-1 .main-image-link img {
-            width: 100%;
-            height: auto;
-            display: block;
-            border-radius: 0;
+        .section-1 .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-1 .content-grid {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .section-1 .hero-content {
+            max-width: 600px;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            margin-bottom: 24px;
+            color: #ffd700;
+        }
+
+        .section-1 h2 {
+            font-size: 52px;
+            color: white;
+            margin-bottom: 32px;
+            text-align: left;
+        }
+
+        .checklist {
+            list-style: none;
+            margin-bottom: 40px;
+        }
+
+        .checklist li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            font-size: 18px;
+            margin-bottom: 16px;
+        }
+
+        .checklist li::before {
+            content: "✓";
+            color: #60d5f8;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        .cta-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .price-badge {
+            background: white;
+            color: #3b82f6;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .guarantee {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            opacity: 0.9;
         }
 
         .main-card {
@@ -267,97 +348,111 @@
             margin-bottom: 40px;
         }
 
-        /* 섹션 3: Hero */
+        /* 섹션 3: Threat Protection (기존 section-1) */
         .section-3 {
-            background-image: url('3.png');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            color: white;
-            position: relative;
+            background: #ffffff;
+            padding: 40px 0 60px 0;
         }
 
-        .section-3::before {
+        .section-3 .hero-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+
+        .section-3 h1 {
+            font-size: 38px;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 0;
+            line-height: 1.3;
+        }
+
+        .section-3 .hero-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 14px;
+            max-height: 336px;
+        }
+
+        .hero-left {
+            background-image: url('1-1.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            padding: 32px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            position: relative;
+            overflow: hidden;
+            height: 336px;
+        }
+
+        .hero-left::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(30, 58, 95, 0.4);
             z-index: 0;
         }
 
-        .section-3 .container {
+        .hero-left > * {
             position: relative;
             z-index: 1;
         }
 
-        .section-3 .content-grid {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            margin-bottom: 24px;
-            color: #ffd700;
-        }
-
-        .section-3 h2 {
-            font-size: 52px;
-            color: white;
-            margin-bottom: 32px;
-        }
-
-        .checklist {
-            list-style: none;
-            margin-bottom: 40px;
-        }
-
-        .checklist li {
-            display: flex;
-            align-items: flex-start;
-            gap: 12px;
-            font-size: 18px;
-            margin-bottom: 16px;
-        }
-
-        .checklist li::before {
-            content: "✓";
-            color: #60d5f8;
-            font-weight: 700;
-            font-size: 24px;
-        }
-
-        .cta-group {
+        .hero-right {
             display: flex;
             flex-direction: column;
-            gap: 16px;
-            align-items: flex-start;
+            gap: 14px;
+            height: 336px;
         }
 
-        .price-badge {
-            background: white;
-            color: #3b82f6;
-            padding: 12px 24px;
-            border-radius: 50px;
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+        .hero-ai-card {
+            background-image: url('1-2.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            flex: 1;
+            height: 161px;
         }
 
-        .guarantee {
+        .hero-stats-card {
+            background-image: url('1-3.png');
+            background-size: cover;
+            background-position: center;
+            border-radius: 16px;
+            padding: 28px;
+            color: white;
+            flex: 1;
+            height: 161px;
             display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 14px;
-            opacity: 0.9;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-stats-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(30, 58, 95, 0.7);
+            z-index: 0;
+        }
+
+        .hero-stats-card > * {
+            position: relative;
+            z-index: 1;
         }
 
         /* 섹션 4: VPN 제공업체 이상 */
@@ -511,6 +606,14 @@
             border-color: #3b82f6;
         }
 
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
         .section-5 .content-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -565,7 +668,7 @@
         @media (max-width: 1024px) {
             .content-grid,
             .section-2 .content-grid,
-            .section-3 .content-grid,
+            .section-1 .content-grid,
             .section-5 .content-grid {
                 grid-template-columns: 1fr;
                 gap: 40px;
@@ -573,6 +676,16 @@
 
             .feature-grid {
                 grid-template-columns: repeat(2, 1fr);
+            }
+
+            .section-3 .hero-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-3 .hero-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 20px;
             }
 
             h1 {
@@ -583,7 +696,7 @@
                 font-size: 32px;
             }
 
-            .section-3 h2 {
+            .section-1 h2 {
                 font-size: 38px;
             }
         }
@@ -597,6 +710,42 @@
                 grid-row: span 1;
             }
 
+            .section-3 h1 {
+                font-size: 28px;
+            }
+
+            .section-3 .hero-grid {
+                max-height: none;
+            }
+
+            .hero-left {
+                padding: 24px;
+                height: auto;
+                min-height: 300px;
+            }
+
+            .hero-left h3 {
+                font-size: 24px !important;
+            }
+
+            .hero-left p {
+                font-size: 14px !important;
+            }
+
+            .hero-right {
+                height: auto;
+            }
+
+            .hero-ai-card {
+                height: auto;
+                min-height: 150px;
+            }
+
+            .hero-stats-card {
+                height: auto;
+                min-height: 150px;
+            }
+
             h1 {
                 font-size: 28px;
             }
@@ -605,7 +754,7 @@
                 font-size: 26px;
             }
 
-            .section-3 h2 {
+            .section-1 h2 {
                 font-size: 30px;
             }
 
@@ -628,11 +777,45 @@
         </div>
     </header>
 
-    <!-- 섹션 1: 메인 이미지 -->
-    <section class="section-1">
-        <a href="https://go.nordvpn.net/SHATX" class="main-image-link" target="_blank" rel="noopener">
-            <img src="메인.png" alt="NordVPN - 피싱, 사기, 악성 소프트웨어로부터 안전한 브라우징">
-        </a>
+    <!-- 섹션 1: 메인 히어로 CTA -->
+    <section class="section-1" id="cta">
+        <div class="container">
+            <div class="content-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                        </svg>
+                        techradar 선정 2025년 1등 VPN
+                    </div>
+
+                    <h2>가장 진보된 VPN.<br>그리고 그 이상.</h2>
+
+                    <ul class="checklist">
+                        <li>세계에서 가장 빠른 VPN 중 하나입니다.</li>
+                        <li>하나의 계정으로 최대 10대의 장치를 보호할 수 있습니다.</li>
+                        <li>피싱, 사기, 멀웨어를 피할 수 있도록 도와줍니다.</li>
+                    </ul>
+
+                    <div class="cta-group">
+                        <div class="price-badge">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+                                <path d="M7 10L12 5L17 10M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            특별 할인
+                        </div>
+                        <a href="https://go.nordvpn.net/SHATX" class="cta-button" style="font-size: 18px; padding: 16px 40px;" target="_blank" rel="noopener">NordVPN 구매하기</a>
+                        <div class="guarantee">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            30일 이내 환불 보장
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- 섹션 2: NordVPN을 사용해야 하는 이유 -->
@@ -668,41 +851,39 @@
         </div>
     </section>
 
-    <!-- 섹션 3: Hero / Main CTA -->
-    <section class="section-3" id="cta">
+    <!-- 섹션 3: Threat Protection -->
+    <section class="section-3">
         <div class="container">
-            <div class="content-grid">
-                <div>
-                    <div class="hero-badge">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+            <div class="hero-header">
+                <h1>피싱, 사기, 악성 소프트웨어 걱정 없이<br>브라우징</h1>
+                <a href="https://go.nordvpn.net/SHATX" class="cta-button" target="_blank" rel="noopener">NordVPN 구매하기</a>
+            </div>
+
+            <div class="hero-grid">
+                <div class="hero-left">
+                    <div class="badge" style="font-size: 13px; margin-bottom: 16px;">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                            <path d="M12 2L2 7V13C2 19 12 22 12 22C12 22 22 19 22 13V7L12 2Z"/>
                         </svg>
-                        techradar 선정 2025년 1등 VPN
+                        Threat Protection <span style="background: #3b82f6; color: white; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 700; margin-left: 4px;">PRO</span>™
                     </div>
+                    <h3 style="font-size: 28px; font-weight: 700; margin-bottom: 16px; line-height: 1.2;">통합 멀웨어 방지<br>도구</h3>
+                    <p style="font-size: 15px; line-height: 1.6; margin-bottom: 20px; opacity: 0.95;">걱정은 덜고, 평온한 일상에 집중하세요. 바이러스 및 위협 방지 Pro™는 백그라운드에서 소리 없이 자동으로 작동해 방문한 웹사이트와 다운로드한 파일에서 위협을 자동으로 스캔합니다.</p>
+                    <a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener" style="color: white; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 6px; font-size: 14px;">
+                        바이러스 및 위협 방지 Pro™란 무엇인가요?
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                            <path d="M12 8V12M12 16H12.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </a>
+                </div>
 
-                    <h2>가장 진보된 VPN.<br>그리고 그 이상.</h2>
-
-                    <ul class="checklist">
-                        <li>세계에서 가장 빠른 VPN 중 하나입니다.</li>
-                        <li>하나의 계정으로 최대 10대의 장치를 보호할 수 있습니다.</li>
-                        <li>피싱, 사기, 멀웨어를 피할 수 있도록 도와줍니다.</li>
-                    </ul>
-
-                    <div class="cta-group">
-                        <div class="price-badge">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
-                                <path d="M7 10L12 5L17 10M12 5V19" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            특별 할인
-                        </div>
-                        <a href="https://go.nordvpn.net/SHATX" class="cta-button" style="font-size: 18px; padding: 16px 40px;" target="_blank" rel="noopener">NordVPN 구매하기</a>
-                        <div class="guarantee">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
-                                <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
-                            30일 이내 환불 보장
-                        </div>
+                <div class="hero-right">
+                    <div class="hero-ai-card"></div>
+                    <div class="hero-stats-card">
+                        <p style="font-size: 14px; margin-bottom: 8px; opacity: 0.9;">매달</p>
+                        <h2 style="font-size: 48px; font-weight: 700; color: #60d5f8; margin-bottom: 4px; line-height: 1;">46억 건</h2>
+                        <p style="font-size: 17px; font-weight: 600;">광고 차단</p>
                     </div>
                 </div>
             </div>
@@ -782,29 +963,115 @@
             <p class="subtitle">최대 10대의 장치에서 동시에 NordVPN을 사용하세요. NordVPN은 모든 주요 플랫폼 및 프록시 브라우저 확장 프로그램을 대상으로 안전한 VPN 연결을 제공합니다.</p>
 
             <div class="device-tabs">
-                <button class="device-tab active">스마트폰과 컴퓨터</button>
-                <button class="device-tab">브라우저</button>
-                <button class="device-tab">TV</button>
-                <button class="device-tab">각종 장치</button>
-                <button class="device-tab">기타(라우터 설정)</button>
+                <button class="device-tab active" data-tab="computers">스마트폰과 컴퓨터</button>
+                <button class="device-tab" data-tab="browser">브라우저</button>
+                <button class="device-tab" data-tab="tv">TV</button>
+                <button class="device-tab" data-tab="devices">각종 장치</button>
+                <button class="device-tab" data-tab="router">기타(라우터 설정)</button>
             </div>
 
-            <div class="content-grid">
-                <div class="visual-box" style="min-height: 500px;">
-                    <a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener">
-                        <img src="5.png" alt="Windows VPN - NordVPN 노트북" style="cursor: pointer;">
-                    </a>
-                </div>
+            <!-- 스마트폰과 컴퓨터 Tab Content -->
+            <div class="tab-content active" data-content="computers">
+                <div class="content-grid">
+                    <div class="visual-box" style="min-height: 500px;">
+                        <a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener">
+                            <img src="5.png" alt="Windows VPN - NordVPN 노트북" style="cursor: pointer;">
+                        </a>
+                    </div>
 
-                <div class="device-list">
-                    <h3>모든 장치 사용 가능</h3>
-                    <ul>
-                        <li><strong><a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener" style="color: #3b82f6; text-decoration: none;">Windows용 VPN을 다운로드</a></strong>하고 PC에서 작업, 게임, 스트리밍을 더 안전하게 즐겨보세요. 가장 빠른 VPN 서비스와 함께 무제한 VPN 데이터를 즐기며, 어디서나 안전지안 연결을 경험하세요.</li>
-                        <li>Mac용 VPN</li>
-                        <li>Linux용 VPN</li>
-                        <li>Android용 VPN</li>
-                        <li>iOS용 VPN</li>
-                    </ul>
+                    <div class="device-list">
+                        <h3>모든 장치 사용 가능</h3>
+                        <ul>
+                            <li><strong><a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener" style="color: #3b82f6; text-decoration: none;">Windows용 VPN을 다운로드</a></strong>하고 PC에서 작업, 게임, 스트리밍을 더 안전하게 즐겨보세요. 가장 빠른 VPN 서비스와 함께 무제한 VPN 데이터를 즐기며, 어디서나 안전한 연결을 경험하세요.</li>
+                            <li>Mac용 VPN</li>
+                            <li>Linux용 VPN</li>
+                            <li>Android용 VPN</li>
+                            <li>iOS용 VPN</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 브라우저 Tab Content -->
+            <div class="tab-content" data-content="browser">
+                <div class="content-grid">
+                    <div class="visual-box" style="min-height: 500px;">
+                        <a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener">
+                            <img src="5-2.png" alt="브라우저 VPN - Chrome, Firefox, Edge" style="cursor: pointer;">
+                        </a>
+                    </div>
+
+                    <div class="device-list">
+                        <h3>브라우저 확장 프로그램</h3>
+                        <ul>
+                            <li><strong><a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener" style="color: #3b82f6; text-decoration: none;">Chrome용 VPN 확장 프로그램을 설치</a></strong>하고 브라우저에서 바로 빠르고 안전한 연결을 경험하세요. 클릭 한 번으로 온라인 개인정보를 보호하고 지역 제한 콘텐츠에 접근할 수 있습니다.</li>
+                            <li>Firefox용 VPN 확장 프로그램</li>
+                            <li>Edge용 VPN 확장 프로그램</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TV Tab Content -->
+            <div class="tab-content" data-content="tv">
+                <div class="content-grid">
+                    <div class="visual-box" style="min-height: 500px;">
+                        <a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener">
+                            <img src="5-3.png" alt="스마트 TV VPN - Android TV, Fire TV" style="cursor: pointer;">
+                        </a>
+                    </div>
+
+                    <div class="device-list">
+                        <h3>스마트 TV 및 스트리밍 장치</h3>
+                        <ul>
+                            <li><strong><a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener" style="color: #3b82f6; text-decoration: none;">Android TV용 VPN을 설치</a></strong>하고 대형 화면에서 전 세계 콘텐츠를 안전하게 스트리밍하세요. 빠른 속도와 안정적인 연결로 버퍼링 없이 즐길 수 있습니다.</li>
+                            <li>Fire TV용 VPN</li>
+                            <li>Chromecast 지원</li>
+                            <li>Apple TV 지원</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 각종 장치 Tab Content -->
+            <div class="tab-content" data-content="devices">
+                <div class="content-grid">
+                    <div class="visual-box" style="min-height: 500px;">
+                        <a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener">
+                            <img src="5-4.png" alt="기타 장치용 VPN - Chromebook, Kindle 등" style="cursor: pointer;">
+                        </a>
+                    </div>
+
+                    <div class="device-list">
+                        <h3>다양한 기기 지원</h3>
+                        <ul>
+                            <li><strong><a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener" style="color: #3b82f6; text-decoration: none;">Chromebook용 VPN을 설치</a></strong>하고 모든 인터넷 활동을 안전하게 보호하세요. 학교, 직장, 공공 Wi-Fi에서도 개인정보를 안전하게 지킬 수 있습니다.</li>
+                            <li>Kindle Fire용 VPN</li>
+                            <li>Raspberry Pi 지원</li>
+                            <li>Meta Quest VR 지원</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 라우터 설정 Tab Content -->
+            <div class="tab-content" data-content="router">
+                <div class="content-grid">
+                    <div class="visual-box" style="min-height: 500px;">
+                        <a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener">
+                            <img src="5-5.png" alt="라우터 VPN 설정 - 전체 네트워크 보호" style="cursor: pointer;">
+                        </a>
+                    </div>
+
+                    <div class="device-list">
+                        <h3>라우터 및 게임 콘솔</h3>
+                        <ul>
+                            <li><strong><a href="https://go.nordvpn.net/SHATX" target="_blank" rel="noopener" style="color: #3b82f6; text-decoration: none;">Wi-Fi 라우터에 VPN을 설정</a></strong>하고 집 전체의 모든 기기를 한 번에 보호하세요. 별도 설정 없이 연결된 모든 장치가 자동으로 VPN 보호를 받습니다.</li>
+                            <li>Xbox용 VPN 설정</li>
+                            <li>PlayStation용 VPN 설정</li>
+                            <li>Nintendo Switch 지원</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -821,8 +1088,20 @@
         // 탭 기능
         document.querySelectorAll('.device-tab').forEach(tab => {
             tab.addEventListener('click', function() {
+                const tabName = this.getAttribute('data-tab');
+
+                // 모든 탭 비활성화
                 document.querySelectorAll('.device-tab').forEach(t => t.classList.remove('active'));
+                // 현재 탭 활성화
                 this.classList.add('active');
+
+                // 모든 탭 콘텐츠 숨기기
+                document.querySelectorAll('.tab-content').forEach(content => content.classList.remove('active'));
+                // 현재 탭 콘텐츠 표시
+                const activeContent = document.querySelector(`.tab-content[data-content="${tabName}"]`);
+                if (activeContent) {
+                    activeContent.classList.add('active');
+                }
             });
         });
 
